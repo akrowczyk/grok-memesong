@@ -2,7 +2,7 @@
 
 Turn X/Twitter posts into satirical songs using Grok AI → Suno.ai
 
-![Screenshot](screenshot.png)
+![Screenshot](docs/screenshot.png)
 
 ## What is this?
 

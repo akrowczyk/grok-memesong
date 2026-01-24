@@ -12,7 +12,7 @@ Upload a screenshot of any social media post, pick a style preset (Sarcastic Cyb
 
 - 📸 **Screenshot OCR** - Extracts text from images using Tesseract.js (runs locally, no API needed)
 - 🤖 **Grok AI Lyrics** - Uses xAI's Grok to generate satirical, meme-worthy songs
-- 🎨 **18 Style Presets** - From "Petty R&B" to "Mariachi Tragedy" to "Weird Al Parody"
+- 🎨 **24 Style Presets** - From "Petty R&B" to "Mariachi Tragedy" to "Swiss Yodel Chaos"
 - 📋 **One-Click Copy** - Copy title, style, and lyrics directly to use in Suno.ai
 - 🔒 **API Key Privacy** - Your key is stored locally in your browser, never on any server
 
@@ -86,6 +86,13 @@ Open [http://localhost:5173](http://localhost:5173) and start creating bangers! 
 | 🍼 Lullaby Roast | Sweet nursery rhyme, savage lyrics |
 | 🎺 Mariachi Tragedy | Telenovela betrayal drama |
 | 💅 Valley Girl Pop | Bubbly sarcastic pop princess |
+| 🏆 90s Boom Bap | Golden era hip-hop, lyrical roasts |
+| 👴 Old Head Lecture | Old school rap, "back in my day" |
+| 🪗 Accordion Tragedy | French musette, café heartbreak |
+| 🎻 Irish Pub Lament | Celtic fiddles, drinking songs |
+| 🦢 Russian Tragedy | Slavic minor keys, existential drama |
+| 🧀 Swiss Yodel Chaos | Alpine yodeling, cowbell chaos |
+| 🥖 French Chanson | Edith Piaf melodrama, no regrets |
 
 ## Tech Stack
 

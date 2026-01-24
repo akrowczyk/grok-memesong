@@ -40,10 +40,19 @@ CRITICAL - PARENTHESES PLACEMENT:
 - Example of WRONG (will be sung):
   These secrets burn inside (whispered)
 
-LANGUAGE RULE:
-- ALL lyrics MUST be written in ENGLISH regardless of the musical style
-- Even for mariachi, reggaeton, K-pop, or other international styles, write the actual lyrics in English
-- You may use occasional foreign exclamations (like "¡Ay!" or "Olé!") but the main lyrics must be English`;
+LANGUAGE RULE (VERY IMPORTANT - DO NOT IGNORE):
+- ALL lyrics MUST be written in ENGLISH. This is NON-NEGOTIABLE.
+- Even when the musical STYLE is French, Italian, Spanish, Russian, German, etc. - the LYRICS must still be in ENGLISH
+- The style/instrumentation can sound French, but the WORDS must be English
+- You may use 1-2 brief foreign exclamations per song MAX (like "Oh la la!" or "¡Ay!") but every actual lyric line must be English
+- DO NOT write verses, choruses, or bridges in any foreign language
+- If you catch yourself writing in French/Spanish/Italian/etc., STOP and rewrite in English
+
+DATE/NUMBER RULE:
+- If there are any dates in the content, SPELL THEM OUT fully in lyrics so they sound natural when sung
+- Example: "Dec 10, 2025" → "December tenth, twenty twenty-five"
+- Example: "1/15/24" → "January fifteenth, twenty twenty-four"
+- This ensures proper pronunciation when the song is generated`;
 
     // Build context section if additional context provided
     const contextSection = additionalContext

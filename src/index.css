@@ -513,3 +513,35 @@ h3 {
   font-size: 3rem;
   opacity: 0.3;
 }
+
+/* Context Textarea */
+.context-textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 80px;
+  transition: var(--transition-fast);
+}
+
+.context-textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(0, 245, 212, 0.1);
+}
+
+.context-textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.context-hint {
+  margin-top: var(--spacing-xs);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}

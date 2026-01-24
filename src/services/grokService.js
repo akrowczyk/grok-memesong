@@ -5,11 +5,12 @@ const GROK_API_URL = 'https://api.x.ai/v1/chat/completions';
 /**
  * Generate a meme song from extracted text using Grok text model
  * @param {string} apiKey - xAI API key
- * @param {string} extractedText - Text extracted from screenshot via OCR
+ * @param {string} extractedText - Text extracted from screenshot via OCR or user input
  * @param {object} preset - Selected style preset
+ * @param {string} additionalContext - Optional additional context to steer lyrics
  * @returns {Promise<{title: string, style: string, lyrics: string}>}
  */
-export async function generateSong(apiKey, extractedText, preset) {
+export async function generateSong(apiKey, extractedText, preset, additionalContext = '') {
     const systemPrompt = `You are a satirical songwriting genius who creates viral, funny songs about trending topics and social media posts. You specialize in creating songs that playfully roast and mock the subject with clever wordplay and catchy hooks.
 
 ${sunoHints}
@@ -44,11 +45,16 @@ LANGUAGE RULE:
 - Even for mariachi, reggaeton, K-pop, or other international styles, write the actual lyrics in English
 - You may use occasional foreign exclamations (like "¡Ay!" or "Olé!") but the main lyrics must be English`;
 
+    // Build context section if additional context provided
+    const contextSection = additionalContext
+        ? `\n\n--- ADDITIONAL CONTEXT/DIRECTION ---\n${additionalContext}\n--- END CONTEXT ---\n\nUse this additional context to guide the tone, focus, or direction of the lyrics.`
+        : '';
+
     const userPrompt = `Here is text extracted from a social media post/screenshot. Create a satirical song about it:
 
 --- POST CONTENT ---
 ${extractedText}
---- END POST ---
+--- END POST ---${contextSection}
 
 STYLE DIRECTION: ${preset.name}
 Base style: ${preset.stylePrompt}

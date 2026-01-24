@@ -1,0 +1,67 @@
+﻿Structural hints (using brackets [])
+Brackets are used to provide the AI with structural commands. These are the most direct way to guide the AI's composition. 
+[Intro] or [Instrumental]
+[Verse] or [Verse 1]
+[Chorus]
+[Bridge]
+[Outro]
+[Guitar Solo] or [Piano Solo]
+[Drum beat]
+[Stop] or [Silence]
+
+
+Vocal and delivery hints (using parentheses ())
+Use parentheses to influence the vocal performance and add effects or backing vocals. 
+(Shouted) or (Yelling)
+(Whispered) or (Softly)
+(Echoes): Creates a ghostly, repeating vocal effect.
+(Ad-libs): Adds subtle, improvisational vocal touches.
+(Harmonies) or (Duet): Instructs the AI to add layers of vocals.
+(Oh-oh-ohs) or (Yeahs): Adds backing vocal effects. 
+
+
+Lyrical formatting for emphasis
+You can use standard text formatting to guide the AI on how to perform a particular line. 
+All caps: Instructs the AI to perform with more power, volume, or emotion, like shouting.
+
+
+Example: I WON'T LET GO!
+Italics: Often interpreted as a soft, stretched, or falsetto vocal style.
+Example: And I'm falling...
+Extra letters: Stretching out words with multiple letters can elongate the vocal phrasing, adding a melodious or dramatic effect.
+Example: goo-o-o-odbye
+Ellipses (...): Creates natural pauses in the vocal delivery.
+Example: I tried... but I can't... let go...
+Hyphens: Can create sharp, percussive syllables, useful for a punchier rap or spoken style. 
+Combining hints for advanced control
+You can combine different techniques within a single line to get more complex and nuanced results. 
+
+
+Example of combined hints:
+[Intro]
+[Synth pad swells into a simple, dreamy beat]
+
+
+[Verse 1]
+(Whispered) A new day is coming
+(Softly) The sun begins to rise
+A new world is waiting (waiting...)
+And it's all a surprise
+
+
+[Chorus]
+WE WON'T BREAK!!! (No, we won't break)
+WE WON'T GIVE UP THE FIGHT! (the fight...)
+(Echoes) We're reaching for the staa-a-a-ars
+Burning bright in the night!
+
+
+[Bridge]
+[Guitar solo, nostalgic tone]
+(Ad-libs) Oh-oh-oh...
+Remember all the things we used to dream about?
+
+
+[Outro]
+[Instrumental fades with ethereal pads]
+(letting go... let go...)

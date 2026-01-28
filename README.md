@@ -12,7 +12,7 @@ Upload a screenshot of any social media post, pick a style preset (Sarcastic Cyb
 
 - 📸 **Screenshot OCR** - Extracts text from images using Tesseract.js (runs locally, no API needed)
 - 🤖 **Grok AI Lyrics** - Uses xAI's Grok to generate satirical, meme-worthy songs
-- 🎨 **26 Style Presets** - From "Petty R&B" to "Greek Taverna" to "Swiss Yodel Chaos"
+- 🎨 **41 Style Presets** - From "Petty R&B" to "Ye Gospel Rap" to "Klezmer Kvetch"
 - 📋 **One-Click Copy** - Copy title, style, and lyrics directly to use in Suno.ai
 - 🔒 **API Key Privacy** - Your key is stored locally in your browser, never on any server
 
@@ -95,6 +95,21 @@ Open [http://localhost:5173](http://localhost:5173) and start creating bangers! 
 | 🥖 French Chanson | Edith Piaf melodrama, no regrets |
 | 🏛️ Greek Taverna | Bouzouki, Zorba plate-smashing |
 | 🍺 German Beer Hall | Oom-pah polka, prost energy |
+| 🎺 Balkan Brass | Gypsy brass, chaotic wedding |
+| 🥁 Afrobeat Sermon | Fela Kuti funky grooves |
+| 🎋 K-Pop Scandal | Slick production, idol drama |
+| 🪘 Bollywood Drama | Filmi melodrama, sweeping strings |
+| 🌸 J-Pop Kawaii | Hyper-cute, passive-aggressive |
+| 🎸 Flamenco Fury | Spanish guitar, fiery passion |
+| 🏝️ Reggae Chill | Laid-back island wisdom |
+| 🪕 Klezmer Kvetch | Jewish folk, complaining-as-art |
+| 🐉 Chinese Opera | Theatrical villain drama |
+| 🪈 Andean Panpipe | Haunting mountain sadness |
+| 🌺 Hawaiian Slack Key | Tropical passive-aggressive aloha |
+| 🧝 Epic Fantasy Ballad | Orchestral fantasy, elvish quest |
+| 🇪🇺 Euro Pop Anthem | Cheesy Eurovision energy |
+| ⛪ Church Hymn | Sacred organ, choir harmonies |
+| 🐻 Ye Gospel Rap | Soul samples, gospel choirs |
 
 ## Tech Stack
 

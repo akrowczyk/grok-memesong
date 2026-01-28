@@ -21,6 +21,7 @@ function App() {
     const [apiKey, setApiKey] = useState(() => {
         return import.meta.env.VITE_XAI_API_KEY || localStorage.getItem('xai-api-key') || '';
     });
+    const [grokModel, setGrokModel] = useState('grok-4-1-fast-non-reasoning');
     const [image, setImage] = useState(null);
     const [contextText, setContextText] = useState('');
     const [selectedPreset, setSelectedPreset] = useState(presets[0]);
@@ -101,7 +102,7 @@ function App() {
 
             // Generate song using Grok text model
             setLoadingMessage('🎵 Writing your banger...');
-            const result = await generateSong(apiKey, contentForSong, selectedPreset, additionalContext);
+            const result = await generateSong(apiKey, contentForSong, selectedPreset, additionalContext, grokModel);
             setSongOutput(result);
         } catch (err) {
             setError(err.message || 'Failed to generate song');
@@ -129,6 +130,26 @@ function App() {
                     value={apiKey}
                     onChange={handleApiKeyChange}
                 />
+            </div>
+
+            <div className="model-toggle-section">
+                <div className="toggle-label">Grok Model:</div>
+                <div className="toggle-switch-container">
+                    <button
+                        className={`toggle-option ${grokModel === 'grok-4-1-fast-non-reasoning' ? 'active' : ''}`}
+                        onClick={() => setGrokModel('grok-4-1-fast-non-reasoning')}
+                        title="Fast generation, great for memes"
+                    >
+                        ⚡ Fast
+                    </button>
+                    <button
+                        className={`toggle-option ${grokModel === 'grok-4-1-fast-reasoning' ? 'active' : ''}`}
+                        onClick={() => setGrokModel('grok-4-1-fast-reasoning')}
+                        title="Uses chain of thought for smarter lyrics"
+                    >
+                        🧠 Reasoning
+                    </button>
+                </div>
             </div>
 
             <div className="app-content">

@@ -8,9 +8,10 @@ const GROK_API_URL = 'https://api.x.ai/v1/chat/completions';
  * @param {string} extractedText - Text extracted from screenshot via OCR or user input
  * @param {object} preset - Selected style preset
  * @param {string} additionalContext - Optional additional context to steer lyrics
+ * @param {string} model - Grok model to use (default: grok-4-1-fast-non-reasoning)
  * @returns {Promise<{title: string, style: string, lyrics: string}>}
  */
-export async function generateSong(apiKey, extractedText, preset, additionalContext = '') {
+export async function generateSong(apiKey, extractedText, preset, additionalContext = '', model = 'grok-4-1-fast-non-reasoning') {
     const systemPrompt = `You are a satirical songwriting genius who creates viral, funny songs about trending topics and social media posts. You specialize in creating songs that playfully roast and mock the subject with clever wordplay and catchy hooks.
 
 ${sunoHints}
@@ -85,7 +86,7 @@ GO! Make it funny and viral-worthy.`;
             Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-            model: 'grok-4-1-fast-non-reasoning',
+            model: model,
             messages: [
                 {
                     role: 'system',

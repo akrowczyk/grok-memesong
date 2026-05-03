@@ -1,27 +1,31 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 
 export default function ScreenshotUpload({ onImageSelect, currentImage }) {
     const [isDragOver, setIsDragOver] = useState(false);
     const fileInputRef = useRef(null);
 
-    const handleDragOver = (e) => {
-        e.preventDefault();
-        setIsDragOver(true);
-    };
+    const handleFile = useCallback((file) => {
+        if (!file || !file.type.startsWith('image/')) return;
 
-    const handleDragLeave = (e) => {
-        e.preventDefault();
-        setIsDragOver(false);
-    };
+        const preview = URL.createObjectURL(file);
+        onImageSelect({ file, preview });
+    }, [onImageSelect]);
 
-    const handleDrop = (e) => {
+    const handleDrop = useCallback((e) => {
         e.preventDefault();
         setIsDragOver(false);
         const file = e.dataTransfer.files[0];
-        if (file && file.type.startsWith('image/')) {
-            processFile(file);
-        }
-    };
+        handleFile(file);
+    }, [handleFile]);
+
+    const handleDragOver = useCallback((e) => {
+        e.preventDefault();
+        setIsDragOver(true);
+    }, []);
+
+    const handleDragLeave = useCallback(() => {
+        setIsDragOver(false);
+    }, []);
 
     const handleClick = () => {
         fileInputRef.current?.click();
@@ -29,28 +33,14 @@ export default function ScreenshotUpload({ onImageSelect, currentImage }) {
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];
-        if (file) {
-            processFile(file);
-        }
+        handleFile(file);
     };
 
-    const processFile = (file) => {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            const dataUrl = e.target.result;
-            // Extract base64 without the data URI prefix
-            const base64 = dataUrl.split(',')[1];
-            onImageSelect({
-                preview: dataUrl,
-                base64: base64,
-                name: file.name,
-            });
-        };
-        reader.readAsDataURL(file);
-    };
-
-    const clearImage = (e) => {
+    const handleRemove = (e) => {
         e.stopPropagation();
+        if (currentImage?.preview) {
+            URL.revokeObjectURL(currentImage.preview);
+        }
         onImageSelect(null);
         if (fileInputRef.current) {
             fileInputRef.current.value = '';
@@ -60,9 +50,9 @@ export default function ScreenshotUpload({ onImageSelect, currentImage }) {
     return (
         <div
             className={`upload-zone ${isDragOver ? 'drag-over' : ''} ${currentImage ? 'has-image' : ''}`}
+            onDrop={handleDrop}
             onDragOver={handleDragOver}
             onDragLeave={handleDragLeave}
-            onDrop={handleDrop}
             onClick={handleClick}
         >
             <input
@@ -78,20 +68,20 @@ export default function ScreenshotUpload({ onImageSelect, currentImage }) {
                     <img src={currentImage.preview} alt="Screenshot preview" />
                     <button
                         className="btn btn-secondary"
-                        onClick={clearImage}
-                        style={{ marginTop: '1rem' }}
+                        onClick={handleRemove}
+                        style={{ marginTop: '0.5rem' }}
                     >
-                        ✕ Clear
+                        ✕ Remove
                     </button>
                 </>
             ) : (
                 <>
                     <div className="upload-icon">📸</div>
                     <p className="upload-text">
-                        <span>Drop a screenshot</span> or click to upload
+                        Drag & drop a screenshot here, or <span>click to browse</span>
                     </p>
-                    <p className="upload-text" style={{ fontSize: '0.875rem', opacity: 0.7 }}>
-                        Works best with X/Twitter post screenshots
+                    <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                        PNG, JPG, or WebP
                     </p>
                 </>
             )}

@@ -8,7 +8,6 @@ export default function StylePresets({ selectedPreset, onSelect }) {
                     key={preset.id}
                     className={`preset-card ${selectedPreset?.id === preset.id ? 'selected' : ''}`}
                     onClick={() => onSelect(preset)}
-                    title={preset.description}
                 >
                     <div className="preset-emoji">{preset.emoji}</div>
                     <div className="preset-name">{preset.name}</div>

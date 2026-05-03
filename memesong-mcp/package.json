@@ -1,0 +1,35 @@
+{
+  "name": "memesong-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for generating Suno-ready songs with Claude Desktop — 150 style presets, 3 humor modes, vocals & instrumental",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "memesong-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && npm run copy-assets",
+    "copy-assets": "cp src/data/presets.json dist/data/presets.json && mkdir -p dist/ui && cp src/ui/index.html dist/ui/index.html",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "claude",
+    "song",
+    "music",
+    "suno",
+    "ai",
+    "model-context-protocol"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}

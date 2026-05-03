@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function SongOutput({ title, style, lyrics, isLoading, loadingMessage }) {
+export default function SongOutput({ title, style, lyrics, isLoading, loadingMessage, instrumentalMode }) {
     const [titleCopied, setTitleCopied] = useState(false);
     const [styleCopied, setStyleCopied] = useState(false);
     const [lyricsCopied, setLyricsCopied] = useState(false);
@@ -28,7 +28,7 @@ export default function SongOutput({ title, style, lyrics, isLoading, loadingMes
         return (
             <div className="empty-state">
                 <div className="empty-state-icon">🎵</div>
-                <p>Upload a screenshot and select a style to generate your meme song</p>
+                <p>Upload a screenshot and select a style to generate your {instrumentalMode ? 'instrumental score' : 'meme song'}</p>
             </div>
         );
     }
@@ -67,7 +67,7 @@ export default function SongOutput({ title, style, lyrics, isLoading, loadingMes
 
             <div className="output-block">
                 <div className="output-header">
-                    <span className="output-label">Lyrics</span>
+                    <span className="output-label">{instrumentalMode ? 'Composition Tags' : 'Lyrics'}</span>
                     <button
                         className="btn btn-icon"
                         onClick={() => copyToClipboard(lyrics, setLyricsCopied)}

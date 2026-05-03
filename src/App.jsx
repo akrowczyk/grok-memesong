@@ -22,6 +22,8 @@ function App() {
         return import.meta.env.VITE_XAI_API_KEY || localStorage.getItem('xai-api-key') || '';
     });
     const [grokModel, setGrokModel] = useState('grok-4-1-fast-non-reasoning');
+    const [humorMode, setHumorMode] = useState('satirical'); // 'satirical' or 'hilarious'
+    const [instrumentalMode, setInstrumentalMode] = useState(false);
     const [image, setImage] = useState(null);
     const [contextText, setContextText] = useState('');
     const [selectedPreset, setSelectedPreset] = useState(presets[0]);
@@ -101,8 +103,8 @@ function App() {
             }
 
             // Generate song using Grok text model
-            setLoadingMessage('🎵 Writing your banger...');
-            const result = await generateSong(apiKey, contentForSong, selectedPreset, additionalContext, grokModel);
+            setLoadingMessage(instrumentalMode ? '🎼 Composing your score...' : '🎵 Writing your banger...');
+            const result = await generateSong(apiKey, contentForSong, selectedPreset, additionalContext, grokModel, humorMode, instrumentalMode);
             setSongOutput(result);
         } catch (err) {
             setError(err.message || 'Failed to generate song');
@@ -152,6 +154,53 @@ function App() {
                 </div>
             </div>
 
+            <div className="model-toggle-section">
+                <div className="toggle-label">Song Mode:</div>
+                <div className="toggle-switch-container">
+                    <button
+                        className={`toggle-option ${humorMode === 'serious' ? 'active' : ''}`}
+                        onClick={() => setHumorMode('serious')}
+                        title="Genuine, heartfelt songwriting — no humor or satire"
+                    >
+                        🎵 Serious
+                    </button>
+                    <button
+                        className={`toggle-option ${humorMode === 'satirical' ? 'active' : ''}`}
+                        onClick={() => setHumorMode('satirical')}
+                        title="Sarcastic, clever, and witty (current style)"
+                    >
+                        😏 Satirical
+                    </button>
+                    <button
+                        className={`toggle-option ${humorMode === 'hilarious' ? 'active' : ''}`}
+                        onClick={() => setHumorMode('hilarious')}
+                        title="Over-the-top, absurd, and super funny"
+                    >
+                        🤣 Super Hilarious
+                    </button>
+                </div>
+            </div>
+
+            <div className="model-toggle-section">
+                <div className="toggle-label">Output Mode:</div>
+                <div className="toggle-switch-container">
+                    <button
+                        className={`toggle-option ${!instrumentalMode ? 'active' : ''}`}
+                        onClick={() => setInstrumentalMode(false)}
+                        title="Generate lyrics for a vocal track"
+                    >
+                        🎤 Vocals
+                    </button>
+                    <button
+                        className={`toggle-option ${instrumentalMode ? 'active' : ''}`}
+                        onClick={() => setInstrumentalMode(true)}
+                        title="Generate Suno metatags for an instrumental score"
+                    >
+                        🎼 Instrumental
+                    </button>
+                </div>
+            </div>
+
             <div className="app-content">
                 <div className="left-panel">
                     <div className="card">
@@ -190,7 +239,7 @@ function App() {
                             onClick={handleGenerate}
                             disabled={!canGenerate}
                         >
-                            {isLoading ? '⏳ Generating...' : '🎵 Generate Song'}
+                            {isLoading ? '⏳ Generating...' : instrumentalMode ? '🎼 Generate Instrumental' : '🎵 Generate Song'}
                         </button>
                         {isLoading && ocrProgress > 0 && ocrProgress < 100 && (
                             <div className="ocr-progress">
@@ -217,6 +266,7 @@ function App() {
                             lyrics={songOutput.lyrics}
                             isLoading={isLoading}
                             loadingMessage={loadingMessage}
+                            instrumentalMode={instrumentalMode}
                         />
                     </div>
                 </div>

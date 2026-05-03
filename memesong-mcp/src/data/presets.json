@@ -1,0 +1,1094 @@
+[
+    {
+        "id": "sarcastic-cyberpunk",
+        "name": "Sarcastic Cyberpunk",
+        "emoji": "🤖",
+        "stylePrompt": "Sarcastic cyberpunk deep-house 126 BPM, glitchy female vocals, distorted synth bass, neon-drenched pads, vocoder harmonies",
+        "tone": "sarcastic, petty rich-people energy, tech-bro shade"
+    },
+    {
+        "id": "country-roast",
+        "name": "Country Roast",
+        "emoji": "🤠",
+        "stylePrompt": "Modern country, 110 BPM, twangy telecaster, fiddle, storytelling male vocals with a southern drawl, steel guitar",
+        "tone": "storytelling mockery, sarcastic, down-home wisdom"
+    },
+    {
+        "id": "hype-trap",
+        "name": "Hype Trap",
+        "emoji": "🔥",
+        "stylePrompt": "Hard-hitting trap beat, 140 BPM, aggressive 808s, dark synths, confident male vocals with auto-tune, ad-libs",
+        "tone": "aggressive, ratio energy, flex-heavy, confrontational"
+    },
+    {
+        "id": "sad-millennial",
+        "name": "Sad Millennial",
+        "emoji": "😔",
+        "stylePrompt": "Lo-fi indie folk, 85 BPM, acoustic guitar, soft piano, breathy vocals, vinyl crackle, bedroom recording aesthetic",
+        "tone": "existential dread, quarter-life crisis, avocado toast sadness"
+    },
+    {
+        "id": "broadway-drama",
+        "name": "Broadway Drama",
+        "emoji": "🎭",
+        "stylePrompt": "Broadway musical theater, dramatic orchestral swells, powerful belt vocals, theatrical delivery, sweeping strings",
+        "tone": "over-the-top theatrical, villain arc energy, dramatic monologue"
+    },
+    {
+        "id": "genz-hyperpop",
+        "name": "Gen-Z Hyperpop",
+        "emoji": "✨",
+        "stylePrompt": "Chaotic hyperpop, 160 BPM, pitch-shifted vocals, glitchy bass, maximalist production, distorted synths, sugar-rush energy",
+        "tone": "chaotic, unhinged, maximalist, short attention span energy"
+    },
+    {
+        "id": "dad-rock-lecture",
+        "name": "Dad Rock Lecture",
+        "emoji": "🎸",
+        "stylePrompt": "Classic rock, 120 BPM, bluesy guitar riffs, steady drums, gravelly male vocals, Hammond organ, dad-at-the-grill energy",
+        "tone": "disappointed father, \"let me tell you something\", boomer wisdom"
+    },
+    {
+        "id": "sea-shanty-ratio",
+        "name": "Sea Shanty Ratio",
+        "emoji": "🏴‍☠️",
+        "stylePrompt": "Sea shanty, group vocals, call and response, accordion, stomping rhythm, pirate crew energy, rolling waves",
+        "tone": "pirate crew roasting together, nautical mockery, communal dunking"
+    },
+    {
+        "id": "linkedin-guru",
+        "name": "LinkedIn Guru",
+        "emoji": "💼",
+        "stylePrompt": "Corporate motivational pop, 115 BPM, uplifting synth pads, clapping rhythm, TED talk energy, inspirational male vocals",
+        "tone": "hustle culture cringe, \"agree?\", thought-leader parody"
+    },
+    {
+        "id": "petty-rnb",
+        "name": "Petty R&B",
+        "emoji": "💅",
+        "stylePrompt": "90s R&B slow jam, 80 BPM, silky pads, finger snaps, sultry female vocals with runs, smooth bass, candlelit vibes",
+        "tone": "passive-aggressive, unbothered shade, \"per my last email\" energy"
+    },
+    {
+        "id": "clown-college",
+        "name": "Clown College",
+        "emoji": "🤡",
+        "stylePrompt": "Circus music, calliope organ, honking horns, silly percussion, cartoonish male vocals, slapstick energy",
+        "tone": "absurdist, \"you really posted that?\", clown-on-clown roasting"
+    },
+    {
+        "id": "toxic-positivity",
+        "name": "Toxic Positivity",
+        "emoji": "🧘",
+        "stylePrompt": "Ambient wellness, 90 BPM, crystal singing bowls, soft pads, breathy female vocals, nature sounds, yoga studio energy",
+        "tone": "condescending wellness vibes, passive-aggressive mindfulness, \"good vibes only\""
+    },
+    {
+        "id": "chefs-kiss",
+        "name": "Chef's Kiss",
+        "emoji": "🍝",
+        "stylePrompt": "Dramatic Italian opera, sweeping vocals, orchestral accompaniment, passionate tenor, accordion interludes, kitchen chaos",
+        "tone": "dramatic Italian, \"mamma mia!\", culinary passion meets internet drama"
+    },
+    {
+        "id": "breaking-news",
+        "name": "Breaking News",
+        "emoji": "📺",
+        "stylePrompt": "Urgent broadcast theme, dramatic percussion, staccato strings, authoritative baritone vocals, ticker-tape energy",
+        "tone": "urgent breaking news delivery, anchor desk gravitas, developing story"
+    },
+    {
+        "id": "weird-al-parody",
+        "name": "Weird Al Parody",
+        "emoji": "🪗",
+        "stylePrompt": "Polka-pop, 140 BPM, accordion, bouncy rhythm, clever nasally male vocals, comedic timing, genre-bending parody",
+        "tone": "clever wordplay, pun-heavy, nerdy precision humor"
+    },
+    {
+        "id": "lullaby-roast",
+        "name": "Lullaby Roast",
+        "emoji": "🍼",
+        "stylePrompt": "Gentle lullaby, 70 BPM, music box, soft piano, sweet female vocals, xylophone, nursery rhyme melody",
+        "tone": "sweet nursery rhyme with savage lyrics, bedtime-story brutality"
+    },
+    {
+        "id": "mariachi-tragedy",
+        "name": "Mariachi Tragedy",
+        "emoji": "🎺",
+        "stylePrompt": "Mariachi, dramatic trumpets, Spanish guitar, passionate male vocals, violin sweeps, telenovela energy",
+        "tone": "telenovela betrayal drama, passionate heartbreak, over-the-top emotion"
+    },
+    {
+        "id": "valley-girl-pop",
+        "name": "Valley Girl Pop",
+        "emoji": "💅",
+        "stylePrompt": "Bubbly pop, 125 BPM, sparkly synths, handclaps, bratty female vocals, mall-pop production, lip-gloss energy",
+        "tone": "bubbly sarcastic, \"like, totally\", pop princess shade"
+    },
+    {
+        "id": "90s-boom-bap",
+        "name": "90s Boom Bap",
+        "emoji": "🏆",
+        "stylePrompt": "Golden era hip-hop, 95 BPM, boom bap drums, jazz sample loops, scratching, confident male flow, old school energy",
+        "tone": "golden era lyrical roasts, multi-syllable bars, turntablism"
+    },
+    {
+        "id": "old-head-lecture",
+        "name": "Old Head Lecture",
+        "emoji": "👴",
+        "stylePrompt": "Old school rap, 88 BPM, soulful samples, classic drum breaks, wise gravelly male vocals, head-nodding groove",
+        "tone": "\"back in my day\", old school wisdom, disappointed OG, generational shade"
+    },
+    {
+        "id": "accordion-tragedy",
+        "name": "Accordion Tragedy",
+        "emoji": "🪗",
+        "stylePrompt": "French musette waltz, accordion, melancholy violin, café ambiance, wistful male vocals, cobblestone romance",
+        "tone": "Parisian heartbreak, café melodrama, beret-wearing sadness"
+    },
+    {
+        "id": "irish-pub-lament",
+        "name": "Irish Pub Lament",
+        "emoji": "🎻",
+        "stylePrompt": "Celtic folk, 120 BPM, fiddle, tin whistle, bodhrán drum, group vocals, pub singalong energy",
+        "tone": "drinking song storytelling, Celtic lament over internet drama"
+    },
+    {
+        "id": "russian-tragedy",
+        "name": "Russian Tragedy",
+        "emoji": "🦢",
+        "stylePrompt": "Slavic folk-rock, minor key, balalaika, deep male choir, dramatic crescendos, frozen tundra energy",
+        "tone": "existential Slavic drama, \"and then it got worse\", bleak humor"
+    },
+    {
+        "id": "swiss-yodel-chaos",
+        "name": "Swiss Yodel Chaos",
+        "emoji": "🧀",
+        "stylePrompt": "Alpine folk, yodeling vocals, cowbell, accordion, alphorn, bouncy rhythm, mountain village energy",
+        "tone": "chaotic yodeling, alpine absurdity, wholesome chaos"
+    },
+    {
+        "id": "french-chanson",
+        "name": "French Chanson",
+        "emoji": "🥖",
+        "stylePrompt": "Classic French chanson, accordion, romantic strings, smoky female vocals, Edith Piaf melodrama, candlelit cabaret",
+        "tone": "no regrets, dramatic French indifference, cigarette-smoke wisdom"
+    },
+    {
+        "id": "greek-taverna",
+        "name": "Greek Taverna",
+        "emoji": "🏛️",
+        "stylePrompt": "Greek folk, bouzouki, sirtaki rhythm, baglamas, passionate male vocals, plate-smashing energy, Zorba vibes",
+        "tone": "Zorba philosophy, plate-smashing celebration, Mediterranean wisdom"
+    },
+    {
+        "id": "german-beer-hall",
+        "name": "German Beer Hall",
+        "emoji": "🍺",
+        "stylePrompt": "Oom-pah polka, tuba, accordion, brass band, group singing, beer-stein clinking, Oktoberfest energy",
+        "tone": "Prost! energy, beer-hall wisdom, cheerful roasting"
+    },
+    {
+        "id": "balkan-brass",
+        "name": "Balkan Brass",
+        "emoji": "🎺",
+        "stylePrompt": "Balkan brass band, 150 BPM, frantic trumpet, tuba, drums, gypsy wedding energy, chaotic celebration",
+        "tone": "chaotic wedding party, Balkan absurdity, unstoppable brass"
+    },
+    {
+        "id": "afrobeat-sermon",
+        "name": "Afrobeat Sermon",
+        "emoji": "🥁",
+        "stylePrompt": "Afrobeat, 110 BPM, funky guitars, polyrhythmic drums, horn section, Fela Kuti grooves, hypnotic bass",
+        "tone": "funky social commentary, groovy sermon, rhythmic wisdom"
+    },
+    {
+        "id": "kpop-scandal",
+        "name": "K-Pop Scandal",
+        "emoji": "🎋",
+        "stylePrompt": "K-Pop, 128 BPM, slick production, EDM drops, rap verses, catchy hooks, synchronized energy, idol drama",
+        "tone": "idol scandal energy, fan-war drama, slick production meets chaos"
+    },
+    {
+        "id": "bollywood-drama",
+        "name": "Bollywood Drama",
+        "emoji": "🪘",
+        "stylePrompt": "Bollywood filmi, sweeping strings, tabla, sitar flourishes, dramatic male-female duet, Technicolor melodrama",
+        "tone": "filmi melodrama, dramatic rain sequence, sweeping romance-turned-roast"
+    },
+    {
+        "id": "jpop-kawaii",
+        "name": "J-Pop Kawaii",
+        "emoji": "🌸",
+        "stylePrompt": "J-Pop, 135 BPM, sparkly synths, cute vocals, video-game bleeps, hyper-cute energy, anime opening vibes",
+        "tone": "hyper-cute passive-aggressive, kawaii shade, anime protagonist energy"
+    },
+    {
+        "id": "flamenco-fury",
+        "name": "Flamenco Fury",
+        "emoji": "🎸",
+        "stylePrompt": "Flamenco, passionate guitar, handclaps, cajón percussion, fierce vocals, fiery footwork energy",
+        "tone": "fiery Spanish passion, dramatic fury, passionate heel-stomping"
+    },
+    {
+        "id": "reggae-chill",
+        "name": "Reggae Chill",
+        "emoji": "🏝️",
+        "stylePrompt": "Roots reggae, 80 BPM, offbeat guitar, deep bass, organ skank, laid-back male vocals, island breeze",
+        "tone": "laid-back island wisdom, chill philosophical roast, \"no problem mon\""
+    },
+    {
+        "id": "klezmer-kvetch",
+        "name": "Klezmer Kvetch",
+        "emoji": "🪕",
+        "stylePrompt": "Klezmer, clarinet, violin, accordion, freilach rhythm, joyful-melancholy energy, wedding band chaos",
+        "tone": "complaining-as-art-form, Jewish grandmother energy, loving criticism"
+    },
+    {
+        "id": "chinese-opera",
+        "name": "Chinese Opera",
+        "emoji": "🐉",
+        "stylePrompt": "Chinese opera, erhu, pipa, dramatic percussion, theatrical vocals, Peking opera stylization, palace intrigue",
+        "tone": "theatrical villain drama, imperial court scheming, ancient wisdom for modern foolishness"
+    },
+    {
+        "id": "andean-panpipe",
+        "name": "Andean Panpipe",
+        "emoji": "🪈",
+        "stylePrompt": "Andean folk, pan flute, charango, bombo drum, haunting harmonies, mountain wind ambiance, condor-soaring energy",
+        "tone": "haunting mountain sadness, ancient wind-blown wisdom, altitude melancholy"
+    },
+    {
+        "id": "hawaiian-slack-key",
+        "name": "Hawaiian Slack Key",
+        "emoji": "🌺",
+        "stylePrompt": "Hawaiian slack-key guitar, ukulele, steel guitar, gentle waves, warm vocal harmonies, tropical breeze",
+        "tone": "tropical passive-aggressive aloha, island-time shade, lei-wrapped roast"
+    },
+    {
+        "id": "epic-fantasy-ballad",
+        "name": "Epic Fantasy Ballad",
+        "emoji": "🧝",
+        "stylePrompt": "Epic orchestral fantasy, sweeping strings, choir, Celtic harp, heroic French horn, battle drums, quest energy",
+        "tone": "fantasy quest narrator, elvish wisdom, epic saga of internet drama"
+    },
+    {
+        "id": "euro-pop-anthem",
+        "name": "Euro Pop Anthem",
+        "emoji": "🇪🇺",
+        "stylePrompt": "Eurovision pop, 130 BPM, cheesy synths, key change, confetti cannons, dramatic staging, Euro-dance energy",
+        "tone": "cheesy Eurovision energy, dramatic key changes, douze points"
+    },
+    {
+        "id": "church-hymn",
+        "name": "Church Hymn",
+        "emoji": "⛪",
+        "stylePrompt": "Sacred hymn, pipe organ, choir harmonies, stained-glass reverb, solemn delivery, cathedral acoustics",
+        "tone": "sacred judgment, choir-backed shame, holy disappointment"
+    },
+    {
+        "id": "ye-gospel-rap",
+        "name": "Ye Gospel Rap",
+        "emoji": "🐻",
+        "stylePrompt": "Gospel rap, soul samples, gospel choir, 808s, Kanye-inspired production, Sunday service energy, stadium anthem",
+        "tone": "gospel-infused truth bombs, Sunday service roast, soul-sample wisdom"
+    },
+    {
+        "id": "gangster-rap",
+        "name": "Gangster Rap",
+        "emoji": "🔫",
+        "stylePrompt": "West Coast G-funk, 92 BPM, deep rolling 808s, whining synth leads, talk-box, menacing male vocals, lowrider bounce, gangsta lean",
+        "tone": "street-level intimidation, cold-blooded roast, \"say it to my face\" energy, no-mercy bars"
+    },
+    {
+        "id": "dirty-south-crunk",
+        "name": "Dirty South Crunk",
+        "emoji": "🏴",
+        "stylePrompt": "Dirty South crunk, 75 BPM, thundering 808 kicks, aggressive chant vocals, Lil Jon ad-libs, distorted synth stabs, strip-club bass, ATL energy, Three 6 Mafia darkness",
+        "tone": "\"YEAH! OKAY!\" energy, crunk-cup aggression, southern-fried intimidation, trunk-rattling threat level"
+    },
+    {
+        "id": "mafioso-rap",
+        "name": "Mafioso Rap",
+        "emoji": "🎰",
+        "stylePrompt": "East Coast mafioso rap, 88 BPM, lush orchestral samples, piano loops, silky strings, cinematic male vocals, Scarface references, champagne-popping luxury, Nas and Biggie influence",
+        "tone": "don-of-the-timeline, Godfather monologue, pinstripe-suit power moves, making you an offer you can't refuse, mob-boss condescension"
+    },
+    {
+        "id": "houston-screw",
+        "name": "Houston Screw",
+        "emoji": "🟣",
+        "stylePrompt": "Houston chopped-and-screwed, 60 BPM, slowed-down vocals, syrupy bass, screwed synths, candy-paint production, DJ Screw influence, purple drank haze, trunk-knocking slab music",
+        "tone": "syrup-slow menace, leaned-out intimidation, candy-painted threats, dripping-slow destruction, already-tipped takedown"
+    },
+    {
+        "id": "chicago-drill-og",
+        "name": "Chicago Drill",
+        "emoji": "🏙️",
+        "stylePrompt": "Chicago drill, 60 BPM, ominous minor-key piano, rattling hi-hats, booming 808 sub-bass, aggressive male vocals, Chief Keef energy, dark trap pads, O-Block menace",
+        "tone": "no-nonsense Chiraq energy, dead-serious takedown, on-sight aggression, \"bang bang\" on your bad take, cold winter menace"
+    },
+    {
+        "id": "detroit-street-rap",
+        "name": "Detroit Street Rap",
+        "emoji": "🏚️",
+        "stylePrompt": "Detroit rap, 140 BPM, fast-paced aggressive flow, gritty lo-fi beats, screeching synths, rapid-fire delivery, Tee Grizzley energy, Eminem-era rawness, 8 Mile hunger",
+        "tone": "Motor City survival bars, rap-battle ferocity, nothing-to-lose aggression, punchline-heavy demolition, come-up fury"
+    },
+    {
+        "id": "slim-shady",
+        "name": "Slim Shady",
+        "emoji": "🧊",
+        "stylePrompt": "Eminem-style rapid-fire rap, 110 BPM, aggressive piano-driven beat, chopping drums, horrorcore storytelling, technical multi-syllabic rhyme schemes, dark humor ad-libs, 8 Mile battle-rap intensity, Marshall Mathers aggression",
+        "tone": "Slim Shady unhinged, rapid-fire surgical wordplay, dark-comedy destruction, \"mom's spaghetti\" energy, battle-rap annihilation, making your bad take into a punchline"
+    },
+    {
+        "id": "nf-intensity",
+        "name": "NF Therapy Session",
+        "emoji": "🖤",
+        "stylePrompt": "NF-style intense rap, 85 BPM, dark cinematic piano, massive orchestral drops, thundering drums, raw passionate male vocals, no profanity, introspective intensity, stadium-echo production, Perception album energy",
+        "tone": "therapy-session intensity, raw emotional honesty destroying your take, \"let you down\" disappointment, cinematic inner-turmoil channeled into a roast, clean but devastating"
+    },
+    {
+        "id": "bay-area-hyphy",
+        "name": "Bay Area Hyphy",
+        "emoji": "🌉",
+        "stylePrompt": "Bay Area hyphy, 105 BPM, bouncy bass, synth whistles, go-dumb energy, Mac Dre influence, sideshow trunk rattle, ghostride vibes, turf-dance beats, E-40 slang",
+        "tone": "yadadamean swagger, going dumb on your bad take, sideshow-stunting superiority, thizz-face energy, too short for your nonsense"
+    },
+    {
+        "id": "smooth-jazz-roast",
+        "name": "Smooth Jazz Roast",
+        "emoji": "🎷",
+        "stylePrompt": "Smooth jazz, 95 BPM, silky saxophone, Rhodes piano, walking bass, brushed drums, late-night radio energy, Kenny G vibes",
+        "tone": "velvet-voiced passive-aggression, elevator-music shade, smooth operator dismantling"
+    },
+    {
+        "id": "80s-synthwave",
+        "name": "80s Synthwave",
+        "emoji": "🌃",
+        "stylePrompt": "Retrowave synthwave, 108 BPM, analog arpeggios, gated reverb drums, neon bass, vocoder vocals, midnight drive energy",
+        "tone": "neon-noir dramatic, retro-futuristic monologue, VHS-tracking nostalgia roast"
+    },
+    {
+        "id": "death-metal-takedown",
+        "name": "Death Metal Takedown",
+        "emoji": "💀",
+        "stylePrompt": "Brutal death metal, 200 BPM, blast beats, down-tuned guitars, guttural growl vocals, double bass drums, wall-of-sound chaos",
+        "tone": "disproportionate brutality, turning mundane takes into apocalyptic fury, unhinged aggression"
+    },
+    {
+        "id": "disco-inferno",
+        "name": "Disco Inferno",
+        "emoji": "🕺",
+        "stylePrompt": "Disco funk, 120 BPM, four-on-the-floor kick, wah guitar, lush strings, falsetto vocals, mirror-ball energy, Studio 54 vibes",
+        "tone": "strutting on your bad take, dance-floor demolition, bell-bottom swagger"
+    },
+    {
+        "id": "rat-pack-lounge",
+        "name": "Rat Pack Lounge",
+        "emoji": "🍸",
+        "stylePrompt": "Big band swing, 110 BPM, brass section, upright bass, finger snaps, crooning male vocals, Sinatra phrasing, smoky lounge",
+        "tone": "martini-sipping condescension, \"let me tell you about this clown\", tuxedo-wearing shade"
+    },
+    {
+        "id": "viking-metal",
+        "name": "Viking Metal",
+        "emoji": "⚔️",
+        "stylePrompt": "Viking folk metal, 140 BPM, war drums, epic choir, hurdy-gurdy, galloping guitars, Norse battle horns, longship energy",
+        "tone": "Norse saga narration, Valhalla-level drama, epic battle over internet foolishness"
+    },
+    {
+        "id": "90s-boy-band",
+        "name": "90s Boy Band",
+        "emoji": "🎤",
+        "stylePrompt": "90s pop, 100 BPM, lush harmonies, choreography-ready beat, key change, dramatic a cappella breakdown, teen heartthrob energy",
+        "tone": "\"bye bye bye\" energy, dramatic breakup choreo, synchronized shade, TRL countdown"
+    },
+    {
+        "id": "medieval-bard",
+        "name": "Medieval Bard",
+        "emoji": "🏰",
+        "stylePrompt": "Medieval folk, lute, mandolin, recorder, hand drum, tavern ambiance, storytelling male vocals, Renaissance faire energy",
+        "tone": "court-jester narration, \"hear ye hear ye\", tavern-tale mockery, ye olde roast"
+    },
+    {
+        "id": "uk-drill",
+        "name": "UK Drill",
+        "emoji": "🔊",
+        "stylePrompt": "UK drill, 140 BPM, sliding 808s, eerie minor-key melodies, hi-hat rolls, cold deadpan male vocals, dark piano stabs",
+        "tone": "cold and calculated, deadpan menace, south London energy, clinical takedown"
+    },
+    {
+        "id": "bossa-nova",
+        "name": "Bossa Nova",
+        "emoji": "🎵",
+        "stylePrompt": "Bossa nova, 76 BPM, nylon-string guitar, soft brushes, smooth bass, breathy vocals, Rio café ambiance, gentle sway",
+        "tone": "impossibly chill destruction, café-sipping serenity while dismantling, velvet demolition"
+    },
+    {
+        "id": "persian-classical",
+        "name": "Persian Classical",
+        "emoji": "🪷",
+        "stylePrompt": "Persian classical, tar, setar, santur, tombak percussion, ornate vocal tahrir, dastgah modal system, poetic melancholy, ancient court music",
+        "tone": "Rumi-level poetic drama, ancient wisdom judging modern foolishness, heartbroken philosopher energy"
+    },
+    {
+        "id": "asmr-whisper-roast",
+        "name": "ASMR Whisper Roast",
+        "emoji": "🤫",
+        "stylePrompt": "ASMR whisper pop, 75 BPM, soft breathy female vocals, gentle tapping, crinkle sounds, warm pads, binaural tingles, pillow-talk intimacy",
+        "tone": "soothing whisper delivering savage destruction, tingly devastation, bedtime brutality wrapped in comfort"
+    },
+    {
+        "id": "video-game-boss",
+        "name": "Video Game Boss Music",
+        "emoji": "🎮",
+        "stylePrompt": "8-bit chiptune meets orchestral, 155 BPM, retro synth arpeggios, epic choir, pixel drums, power-up sounds, final boss energy, health-bar-depleting intensity",
+        "tone": "final boss encounter, health bar depleting, \"you are not prepared\", game-over screen energy"
+    },
+    {
+        "id": "wwe-entrance",
+        "name": "WWE Entrance Theme",
+        "emoji": "💪",
+        "stylePrompt": "Arena rock entrance theme, 130 BPM, crunchy power chords, pyro explosion hits, crowd roar, anthemic vocals, walk-to-the-ring swagger, stadium energy",
+        "tone": "walking to the ring to destroy your take, pyrotechnic swagger, announcer-voice drama, body-slam energy"
+    },
+    {
+        "id": "true-crime-podcast",
+        "name": "True Crime Podcast",
+        "emoji": "🔍",
+        "stylePrompt": "True crime ambient, 70 BPM, eerie piano, dark atmospheric pads, vinyl static, measured narrator vocals, unsettling strings, investigative tension",
+        "tone": "\"but something was very wrong\", forensic dissection of bad takes, case-file narration, chilling discovery energy"
+    },
+    {
+        "id": "reggaeton-perreo",
+        "name": "Reggaeton Perreo",
+        "emoji": "🔥",
+        "stylePrompt": "Reggaeton, 95 BPM, dembow riddim, heavy 808 bass, reggaeton snare rolls, Latin male vocals, club-floor energy, perreo bounce",
+        "tone": "dale energy, club-floor roasting, Latin swagger takedown, infectious rhythm meets merciless bars"
+    },
+    {
+        "id": "gregorian-chant",
+        "name": "Gregorian Chant",
+        "emoji": "🕯️",
+        "stylePrompt": "Gregorian chant, monastic male choir, Latin phrasing, cathedral reverb, drone bass, solemn plainchant, candlelit monastery ambiance",
+        "tone": "ancient monks passing divine judgment on your tweet, sacred condemnation, monastery-level disappointment"
+    },
+    {
+        "id": "lofi-study-beats",
+        "name": "Lo-Fi Study Beats",
+        "emoji": "📚",
+        "stylePrompt": "Lo-fi hip-hop, 85 BPM, dusty vinyl crackle, mellow piano chords, jazzy guitar, soft drum loops, rain ambiance, warm tape saturation",
+        "tone": "casually studying your bad take, chill devastation, homework-vibes dismantling, cozy destruction"
+    },
+    {
+        "id": "courtroom-drama",
+        "name": "Courtroom Drama",
+        "emoji": "⚖️",
+        "stylePrompt": "Legal drama score, staccato orchestral hits, dramatic percussion, tense strings, authoritative vocals, gavel strikes, procedural tension",
+        "tone": "\"objection!\", Law & Order dun-dun energy, prosecuting bad takes, verdict: guilty of being wrong"
+    },
+    {
+        "id": "tango-argentino",
+        "name": "Tango Argentino",
+        "emoji": "🌹",
+        "stylePrompt": "Argentine tango, bandoneón, dramatic strings, walking bass, passionate vocals, sharp staccato rhythm, dance-floor confrontation",
+        "tone": "intense eye-contact takedown, rose-in-teeth passion, dramatic dip into destruction, dance-floor vendetta"
+    },
+    {
+        "id": "sports-commentary",
+        "name": "Sports Commentary",
+        "emoji": "🏈",
+        "stylePrompt": "Sports broadcast energy, stadium organ riffs, crowd noise swells, energetic male vocals, air-horn accents, jock-jam beat, arena anthem",
+        "tone": "play-by-play ratio call, \"and the crowd goes wild!\", instant-replay roast, sideline reporter energy"
+    },
+    {
+        "id": "npc-streaming",
+        "name": "NPC Streaming",
+        "emoji": "🤖",
+        "stylePrompt": "Repetitive electronic pop, 120 BPM, donation alert chimes, robotic female vocals, looping phrases, glitchy stutters, livestream energy",
+        "tone": "robotic catchphrase repetition, donation-fueled roasting, \"ice cream so good\", NPC malfunction energy"
+    },
+    {
+        "id": "tiktok-bait",
+        "name": "TikTok Bait",
+        "emoji": "📱",
+        "stylePrompt": "Viral short-form pop, 128 BPM, sped-up vocals, catchy hook loop, bass-boosted drops, trending sound aesthetic, dopamine-hit production",
+        "tone": "algorithm-brained chaos, \"wait for it\", short attention span destruction, duet-this energy"
+    },
+    {
+        "id": "anime-villain-monologue",
+        "name": "Anime Villain Monologue",
+        "emoji": "⚡",
+        "stylePrompt": "Epic J-rock power ballad, 145 BPM, shredding guitar, dramatic orchestra, choir crescendo, intense male vocals, anime opening energy",
+        "tone": "\"you've activated my trap card\", dramatic power reveal, protagonist-turned-villain, final form unleashed"
+    },
+    {
+        "id": "elevator-muzak",
+        "name": "Elevator Muzak",
+        "emoji": "🛗",
+        "stylePrompt": "Smooth elevator music, 100 BPM, soft saxophone, gentle piano, muted strings, inoffensive arrangement, waiting-room ambiance, hold-music energy",
+        "tone": "aggressively pleasant destruction, hold-music annihilation, on-hold while your take gets demolished"
+    },
+    {
+        "id": "cumbia-roast",
+        "name": "Cumbia Roast",
+        "emoji": "💃",
+        "stylePrompt": "Colombian cumbia, 95 BPM, accordion, güira scraper, conga drums, shuffling rhythm, festive male vocals, carnival energy",
+        "tone": "infectious dance-floor mockery, cumbia shuffle takedown, party-fueled roasting, carnival chaos"
+    },
+    {
+        "id": "throat-singing-doom",
+        "name": "Throat Singing Doom",
+        "emoji": "🏔️",
+        "stylePrompt": "Tuvan throat singing, deep overtone vocals, dark ambient drones, shamanic drums, wind sounds, vast steppe atmosphere, otherworldly resonance",
+        "tone": "cosmic judgment from the void, ancient steppe tribunal, otherworldly disappointment, throat-vibrating condemnation"
+    },
+    {
+        "id": "bluegrass-banjo-duel",
+        "name": "Bluegrass Banjo Duel",
+        "emoji": "🪕",
+        "stylePrompt": "Bluegrass, 160 BPM, fast-picking banjo, fiddle, upright bass, mandolin, front-porch energy, dueling instruments, Appalachian fire",
+        "tone": "front-porch showdown, dueling-banjos energy, Appalachian storytelling roast, holler-to-holler shade"
+    },
+    {
+        "id": "cajun-zydeco",
+        "name": "Cajun Zydeco",
+        "emoji": "🦞",
+        "stylePrompt": "Zydeco, 130 BPM, accordion, washboard, triangle, fiddle, two-step rhythm, bayou party energy, Louisiana groove",
+        "tone": "bayou swamp wisdom, crawfish-boil roasting, laissez les bon temps rouler, Cajun spice takedown"
+    },
+    {
+        "id": "infomercial-jingle",
+        "name": "Infomercial Jingle",
+        "emoji": "📺",
+        "stylePrompt": "Cheesy infomercial jingle, 118 BPM, bright synth brass, stock-music energy, enthusiastic vocals, before-and-after drama, call-now urgency",
+        "tone": "\"but wait, there's more!\", before-and-after your bad take, act-now energy, operators standing by"
+    },
+    {
+        "id": "weather-channel",
+        "name": "Weather Channel Forecast",
+        "emoji": "🌤️",
+        "stylePrompt": "Smooth jazz-adjacent forecast music, 88 BPM, soft Rhodes, light sax, gentle synth pads, calm male vocals, local-forecast ambiance",
+        "tone": "casually forecasting your downfall, \"expect heavy ratio with a chance of L\", doppler-radar devastation"
+    },
+    {
+        "id": "classical-piano-nocturne",
+        "name": "Classical Piano Nocturne",
+        "emoji": "🎹",
+        "stylePrompt": "Romantic piano nocturne, rubato tempo, Chopin-esque arpeggios, delicate dynamics, concert-hall reverb, candlelit recital, velvet-touch keys",
+        "tone": "exquisite refinement delivering utter devastation, concert-hall condescension, Chopin-level disappointment"
+    },
+    {
+        "id": "didgeridoo-outback",
+        "name": "Australian Didgeridoo",
+        "emoji": "🦘",
+        "stylePrompt": "Aboriginal-inspired ambient, didgeridoo drone, clapsticks, deep earthy bass, outback wind, hypnotic circular breathing, ancient landscape",
+        "tone": "ancient outback judgment, droning disapproval from the dreamtime, down-under dismantling"
+    },
+    {
+        "id": "nature-documentary",
+        "name": "Nature Documentary",
+        "emoji": "🦁",
+        "stylePrompt": "Nature documentary score, gentle orchestral, ambient wildlife sounds, measured narrator vocals, BBC Earth strings, majestic woodwinds, savanna ambiance",
+        "tone": "Attenborough narrating your ratio like wildlife, \"and here we observe\", clinical zoological dissection of bad takes"
+    },
+    {
+        "id": "spaghetti-western",
+        "name": "Spaghetti Western",
+        "emoji": "🌵",
+        "stylePrompt": "Spaghetti western, Morricone-style, haunting whistle, twangy electric guitar, dramatic timpani, lonely trumpet, tumbleweed tension, high-noon showdown",
+        "tone": "high-noon standoff, the good the bad and the tweet, dusty showdown, squinting-in-the-sun energy"
+    },
+    {
+        "id": "barbershop-quartet",
+        "name": "Barbershop Quartet",
+        "emoji": "🎩",
+        "stylePrompt": "Barbershop quartet, four-part a cappella harmony, tight vocal blend, bass-baritone foundation, tenor flourishes, finger snaps, straw-hat charm",
+        "tone": "synchronized harmonized shade, straw-hat gentlemen politely destroying you, doo-wop devastation"
+    },
+    {
+        "id": "funeral-march",
+        "name": "Funeral March",
+        "emoji": "⚰️",
+        "stylePrompt": "Funeral march, slow tempo, mournful brass, solemn drums, organ dirge, tolling bells, black-veil procession, eulogy gravitas",
+        "tone": "solemnly mourning the death of your credibility, pallbearers carrying your L, RIP your take"
+    },
+    {
+        "id": "80s-workout-video",
+        "name": "80s Workout Video",
+        "emoji": "🏋️",
+        "stylePrompt": "80s aerobics synth-pop, 130 BPM, gated snare, bright synth stabs, upbeat female vocals, VHS tracking, spandex-and-headband energy",
+        "tone": "\"feel the burn\" while getting roasted, leg-warmer motivational destruction, jazzercise shade"
+    },
+    {
+        "id": "noir-detective",
+        "name": "Noir Detective",
+        "emoji": "🕵️",
+        "stylePrompt": "Film noir jazz, smoky saxophone, muted trumpet, upright bass, brushed drums, rain on windows, trench-coat-and-fedora ambiance, 1940s shadow",
+        "tone": "\"she walked in with a tweet that would change everything\", hardboiled narration, case-file shade"
+    },
+    {
+        "id": "kids-show-theme",
+        "name": "Kids' Show Theme",
+        "emoji": "🧸",
+        "stylePrompt": "Children's TV theme, bright xylophone, friendly acoustic guitar, sing-along melody, clapping rhythm, cheerful vocals, educational energy, rainbow vibes",
+        "tone": "patiently explaining why your take is wrong like you're five, \"can you say ratio?\", wholesome educational destruction"
+    },
+    {
+        "id": "vaporwave-mall",
+        "name": "Vaporwave Mall",
+        "emoji": "🌴",
+        "stylePrompt": "Vaporwave, slowed-and-reverbed 80s samples, chopped synths, lo-fi degradation, echoing mall ambiance, pitched-down vocals, Japanese text aesthetic",
+        "tone": "a e s t h e t i c annihilation, slowed-down consumerist dreamstate, your take exists in a dying mall"
+    },
+    {
+        "id": "drill-sergeant",
+        "name": "Drill Sergeant Cadence",
+        "emoji": "🫡",
+        "stylePrompt": "Military marching cadence, stomping boots, call-and-response chant, aggressive male vocals, snare drum march, platoon energy, boot-camp intensity",
+        "tone": "screaming-in-your-face correction, \"drop and give me 20\", making your bad take do push-ups, full metal jacket"
+    },
+    {
+        "id": "haunted-music-box",
+        "name": "Haunted Music Box",
+        "emoji": "👻",
+        "stylePrompt": "Horror music box, detuned chimes, creepy celesta, dissonant strings, wind-up mechanism slowing, whispered vocals, abandoned nursery ambiance",
+        "tone": "your bad take is the haunted doll, creepy-child nursery-rhyme destruction, \"want to play a game?\" energy"
+    },
+    {
+        "id": "succession-dynasty",
+        "name": "Succession Dynasty",
+        "emoji": "👑",
+        "stylePrompt": "Dramatic classical piano over trap hi-hats, orchestral strings, dark luxury hip-hop beat, Britell-style melancholy, penthouse minor key, dynasty theme energy",
+        "tone": "billionaire family backstabbing, \"you're not serious people\", boardroom power plays, Logan Roy disappointment, silver-spoon savagery"
+    },
+    {
+        "id": "succession-boardroom",
+        "name": "Succession Boardroom",
+        "emoji": "🏢",
+        "stylePrompt": "Icy string quartet, sparse dissonant piano, ambient corporate dread, glacial cello, ticking clock percussion, whispered power dynamics, Britell underscore minimalism, marble-hallway reverb",
+        "tone": "quiet boardroom betrayal, ice-cold corporate maneuvering, \"I'm gonna grind your bones to make my bread\", whispered hostile takeover, trust-fund sociopathy delivered at a murmur"
+    },
+    {
+        "id": "succession-yacht",
+        "name": "Succession Yacht",
+        "emoji": "🛥️",
+        "stylePrompt": "Mediterranean acoustic guitar, lapping wave ambiance, sun-drenched strings turning dark, Britell-style tonal shift from major to minor, champagne-glass percussion, luxury turning menacing, Amalfi Coast dread",
+        "tone": "paradise betrayal, smiling while plotting your destruction, golden-hour backstabbing, \"you're the one hugging me and I can feel the knife\", Riviera treachery in linen"
+    },
+    {
+        "id": "succession-kendall-rap",
+        "name": "Succession Kendall Rap",
+        "emoji": "🎤",
+        "stylePrompt": "Cringe-confident hip-hop, 95 BPM, overly polished beat, try-hard flow over luxury production, awkward ad-libs, billionaire-kid rap energy, too much autotune, embarrassing sincerity over a legitimately good beat",
+        "tone": "L to the O-G energy, failson trying to be street, trust-fund bars, cringe so hard it becomes art, \"dad please love me\" disguised as a diss track, unearned swagger"
+    },
+    {
+        "id": "succession-funeral",
+        "name": "Succession Funeral",
+        "emoji": "⚰️",
+        "stylePrompt": "Cathedral pipe organ, mournful strings, Britell requiem, somber brass, tolling bells, eulogy-paced delivery, grief mixed with simmering rage, black-suit gravitas, grand church reverb",
+        "tone": "weaponized eulogy, grieving and scheming simultaneously, \"I see you\" at the casket, turning a funeral into a shareholder meeting, crocodile tears over real power moves"
+    },
+    {
+        "id": "succession-boar-on-the-floor",
+        "name": "Succession Boar on the Floor",
+        "emoji": "🐗",
+        "stylePrompt": "Dark psychological horror underscore, low menacing drones, staccato strings, uncomfortable silence breaks, predatory bass, hunting-horn motifs twisted sinister, candlelit-dinner-turned-nightmare energy",
+        "tone": "humiliation ritual energy, psychological dominance games, \"oink for me\", dinner-party-from-hell, watching someone powerful make everyone crawl, sadistic parlor games"
+    },
+    {
+        "id": "succession-siblings",
+        "name": "Succession Siblings",
+        "emoji": "🤫",
+        "stylePrompt": "Anxious pizzicato strings, hushed conspiratorial piano, nervous hi-hat ticks, whispered motifs, hallway-echo reverb, sibling-huddle tension, paranoid glances set to music, Britell scheming cue",
+        "tone": "sibling war council in a bathroom, \"are we doing this?\", paranoid alliance-building, texting under the table, shifting loyalties every thirty seconds, trust nobody energy"
+    },
+    {
+        "id": "punk-rock-riot",
+        "name": "Punk Rock Riot",
+        "emoji": "🤘",
+        "stylePrompt": "Punk rock, 180 BPM, buzzing power chords, thrashing drums, shouted vocals, raw distortion, three chords and the truth, DIY basement energy",
+        "tone": "anti-establishment fury, moshing on your bad take, anarchy in the timeline, safety-pin savagery"
+    },
+    {
+        "id": "emo-anthem",
+        "name": "Emo Anthem",
+        "emoji": "🖤",
+        "stylePrompt": "Emo pop-punk, 170 BPM, crunchy guitars, dramatic breakdowns, impassioned male vocals cracking with emotion, marching-band snare, eyeliner energy",
+        "tone": "side-bang dramatic, \"I'm not okay\" energy, black-parade theater-kid roasting, Hot Topic heartbreak"
+    },
+    {
+        "id": "grunge-flannel",
+        "name": "Grunge Flannel",
+        "emoji": "🧥",
+        "stylePrompt": "Grunge rock, 115 BPM, heavy distorted guitar, sludgy bass, disaffected male vocals, dynamic quiet-loud-quiet, Seattle rain energy",
+        "tone": "disaffected 90s apathy, flannel-wrapped disappointment, \"whatever, nevermind\", too bored to care about your take"
+    },
+    {
+        "id": "edm-festival-drop",
+        "name": "EDM Festival Drop",
+        "emoji": "🎆",
+        "stylePrompt": "Big room EDM, 128 BPM, massive supersaw build-up, crowd chant, snare roll crescendo, explosive bass drop, festival pyro energy, mainstage anthem",
+        "tone": "\"3... 2... 1... DROP\" on your bad take, mainstage demolition, hands-in-the-air destruction, festival-crowd ratio"
+    },
+    {
+        "id": "ska-upstroke",
+        "name": "Ska Upstroke",
+        "emoji": "⬛",
+        "stylePrompt": "Third wave ska-punk, 160 BPM, upstroke guitar, horn section, walking bass, upbeat drums, skanking energy, checkerboard vibes",
+        "tone": "skanking on your timeline, horn-fueled takedown, pick-it-up energy, mosh-pit-meets-brass-band"
+    },
+    {
+        "id": "surf-rock",
+        "name": "Surf Rock",
+        "emoji": "🏄",
+        "stylePrompt": "Surf rock, 140 BPM, heavy reverb guitar, twangy Fender tremolo, driving drums, Dick Dale energy, beach party, endless summer",
+        "tone": "riding the wave of your bad take, beach-blanket roasting, wipeout energy, sun-drenched destruction"
+    },
+    {
+        "id": "motown-soul",
+        "name": "Motown Soul",
+        "emoji": "🎙️",
+        "stylePrompt": "Classic Motown, 115 BPM, lush strings, tambourine, warm bass, handclaps, soulful group vocals, Hitsville USA production, 60s charm",
+        "tone": "Supremes-style synchronized shade, soulful but savage, \"stop in the name of\" your bad take, velvet-glove roasting"
+    },
+    {
+        "id": "dancehall-bashment",
+        "name": "Dancehall Bashment",
+        "emoji": "🇯🇲",
+        "stylePrompt": "Dancehall, 100 BPM, riddim bass, digital beats, toasting vocals, air horn, gunshot sound effects, bashment energy, sound system vibes",
+        "tone": "sound-system clash energy, air-horn punctuated destruction, wine-and-dip dismissal, yard-man authority"
+    },
+    {
+        "id": "movie-trailer-epic",
+        "name": "Movie Trailer Epic",
+        "emoji": "🎬",
+        "stylePrompt": "Epic movie trailer, massive brass BWAAAAM, thundering percussion, choir crescendo, dramatic pauses, bass risers, Hans Zimmer intensity, IMAX energy",
+        "tone": "\"in a world where one person posted a terrible take...\", inception-horn drama, third-act climax, coming-this-summer energy"
+    },
+    {
+        "id": "spoken-word-poetry",
+        "name": "Spoken Word Poetry",
+        "emoji": "📝",
+        "stylePrompt": "Spoken word over minimalist jazz, soft upright bass, gentle piano, finger snaps, intimate vocals, coffee-shop open-mic, poetry-slam cadence",
+        "tone": "slam-poet intensity, finger-snap-worthy bars, \"and I said to myself\" energy, coffeehouse devastation"
+    },
+    {
+        "id": "christmas-carol",
+        "name": "Christmas Carol",
+        "emoji": "🎄",
+        "stylePrompt": "Christmas pop, jingling sleigh bells, warm orchestral arrangement, choir harmonies, glockenspiel, cozy fireplace vibes, holiday crooner vocals",
+        "tone": "roasting chestnuts and your timeline, \"all I want for Christmas is for you to delete this\", holiday-sweater shade"
+    },
+    {
+        "id": "soap-opera-theme",
+        "name": "Soap Opera Theme",
+        "emoji": "💔",
+        "stylePrompt": "Daytime TV soap opera, dramatic organ stings, lush synthesizer, emotional key changes, breathy female vocals, soft-focus melodrama, cliffhanger tension",
+        "tone": "\"who's the father?!\" energy, dramatic zoom-in, amnesia-subplot drama, daytime-TV betrayal gasps"
+    },
+    {
+        "id": "fado-saudade",
+        "name": "Fado Saudade",
+        "emoji": "🇵🇹",
+        "stylePrompt": "Portuguese fado, classical guitar, Portuguese guitarra, deep female vocals, melancholic minor key, intimate tavern ambiance, ocean-mist sadness",
+        "tone": "deep Portuguese longing for a time before your bad take existed, saudade for your lost credibility, tavern-weeping wisdom"
+    },
+    {
+        "id": "phonk-drift",
+        "name": "Phonk Drift",
+        "emoji": "🚗",
+        "stylePrompt": "Memphis phonk, 130 BPM, heavy cowbell, chopped vocal samples, deep 808 bass, dark synths, drift-car energy, pitched-down Memphis rap aesthetic",
+        "tone": "drifting past your bad take in slow-mo, cowbell-driven dominance, sigma-grindset energy, sunglasses-at-night swagger"
+    },
+    {
+        "id": "amapiano",
+        "name": "Amapiano",
+        "emoji": "🌍",
+        "stylePrompt": "Amapiano, 113 BPM, log drum bass, shaker percussion, soft keys, jazzy piano stabs, smooth vocals, Johannesburg groove, deep house fusion",
+        "tone": "smooth South African groove demolition, log-drum devastation, effortlessly cool takedown, Mzansi vibes"
+    },
+    {
+        "id": "blues-confession",
+        "name": "Blues Confession",
+        "emoji": "🎸",
+        "stylePrompt": "12-bar blues, 75 BPM, crying electric guitar bends, Hammond organ, walking bass, shuffling drums, gravelly male vocals, smoky juke-joint ambiance",
+        "tone": "woke up this morning and saw your terrible take, 12-bar suffering, BB King bends of disappointment, juke-joint wisdom"
+    },
+    {
+        "id": "industrial-grind",
+        "name": "Industrial Grind",
+        "emoji": "⚙️",
+        "stylePrompt": "Industrial, 125 BPM, harsh electronic noise, distorted machine sounds, pounding kick drum, aggressive processed vocals, factory-floor chaos, NIN energy",
+        "tone": "factory-press crushing your take, machine-noise fury, assembly-line destruction, cold mechanical judgment"
+    },
+    {
+        "id": "doo-wop-corner",
+        "name": "Doo-Wop Street Corner",
+        "emoji": "🎶",
+        "stylePrompt": "1950s doo-wop, tight vocal harmonies, finger snaps, stand-up bass, simple drums, \"shoo-bop\" backing vocals, street-corner serenade, nostalgic warmth",
+        "tone": "wholesome 50s harmonies delivering devastating shade, \"shoo-bop-shoo-wadda\" destruction, malt-shop mockery"
+    },
+    {
+        "id": "psychedelic-trip",
+        "name": "Psychedelic Trip",
+        "emoji": "🍄",
+        "stylePrompt": "60s psychedelic rock, wah-wah guitar, swirling organ, backwards tape effects, sitars, trippy panning, acid-rock energy, Hendrix-meets-Doors",
+        "tone": "expanding consciousness to realize how bad your take was, acid-trip revelation, third-eye roasting, kaleidoscope shade"
+    },
+    {
+        "id": "gospel-revival",
+        "name": "Gospel Revival",
+        "emoji": "⛪",
+        "stylePrompt": "Southern gospel revival, Hammond B3 organ, clapping congregation, full choir, passionate preacher vocals, tambourine, tent-revival fervor, hallelujah energy",
+        "tone": "tent-revival sermon on your sins, preacher calling you out by name, congregation saying \"amen\" to your roast, come-to-Jesus moment"
+    },
+    {
+        "id": "power-ballad",
+        "name": "Power Ballad",
+        "emoji": "🔥",
+        "stylePrompt": "80s power ballad, slow build to massive chorus, soaring guitar solo, arena drums, lighters-up energy, hair-metal vocals, Bon Jovi key change, stadium reverb",
+        "tone": "lighter-waving while destroying your take, dramatic key-change annihilation, hair-metal heartbreak, arena-rock devastation"
+    },
+    {
+        "id": "drum-and-bass-rave",
+        "name": "Drum & Bass Rave",
+        "emoji": "🕺",
+        "stylePrompt": "Drum and bass, 174 BPM, chopped breakbeats, rolling bass, atmospheric pads, rave stabs, MC toasting, warehouse energy, UK rave culture",
+        "tone": "breakbeat-speed destruction, warehouse-rave annihilation, MC hyping up your ratio, jump-up energy"
+    },
+    {
+        "id": "country-trap",
+        "name": "Country Trap",
+        "emoji": "🤠",
+        "stylePrompt": "Country trap fusion, 130 BPM, twangy guitar over 808s, banjo meets hi-hats, southern drawl with auto-tune, yeehaw bass drops, Old Town Road energy",
+        "tone": "genre-breaking takedown, yeehaw-meets-skrrt, Nashville-to-Atlanta pipeline, boots-and-Jordans energy"
+    },
+    {
+        "id": "christian-edm",
+        "name": "Christian EDM",
+        "emoji": "✝️",
+        "stylePrompt": "Christian EDM worship, 128 BPM, euphoric synth pads, festival bass drops, megachurch choir, hands-raised energy, Hillsong-meets-Avicii, heavenly build-ups",
+        "tone": "megachurch DJ dropping holy bass, worship-leader shade, \"God told me your take is wrong\", youth-pastor-with-a-fog-machine energy"
+    },
+    {
+        "id": "middle-eastern-hurdy-gurdy",
+        "name": "Middle Eastern Hurdy Gurdy",
+        "emoji": "🎻",
+        "stylePrompt": "Middle Eastern hurdy gurdy instrumental, droning medieval strings, Arabic maqam scales, darbuka percussion, oud flourishes, hypnotic desert groove, Silk Road fusion, no vocals",
+        "tone": "ancient Silk Road caravan judgment, desert-wind drone of disapproval, bazaar-merchant scheming energy, mystical instrumental fury"
+    },
+    {
+        "id": "neo-soul-confessional",
+        "name": "Neo-Soul Confessional",
+        "emoji": "🌊",
+        "stylePrompt": "Neo-soul, 78 BPM, warm Rhodes keys, lush harmonies, jazzy guitar, subtle 808s, breathy intimate vocals, lo-fi vinyl warmth, Frank Ocean atmosphere, Erykah Badu soul, bedroom studio intimacy",
+        "tone": "vulnerable late-night confessional, velvet introspection, too-real-for-comfort honesty, whispered truth bombs wrapped in silk"
+    },
+    {
+        "id": "trap-soul",
+        "name": "Trap Soul",
+        "emoji": "💔",
+        "stylePrompt": "Trap soul, 68 BPM, moody 808s, dark atmospheric pads, reverb-drenched vocals, sparse piano, The Weeknd melancholy, Bryson Tiller vibes, late-night drive energy, cinematic R&B",
+        "tone": "heartbreak at 2am, dark luxury emotional damage, too-smooth devastation, after-hours vulnerability turned weapon"
+    },
+    {
+        "id": "indie-rock-anthem",
+        "name": "Indie Rock Anthem",
+        "emoji": "🎸",
+        "stylePrompt": "Indie rock, 125 BPM, jangly guitars, driving bass, tight drums, reverb-washed vocals, Arctic Monkeys swagger, Tame Impala shimmer, festival-stage energy, NME cover vibes",
+        "tone": "cool detachment hiding genuine fury, leather-jacket intellectualism, too-clever-for-you indie snark, reading-list roasting"
+    },
+    {
+        "id": "pop-punk-revival",
+        "name": "Pop Punk Revival",
+        "emoji": "💥",
+        "stylePrompt": "Pop punk, 172 BPM, crunchy palm-muted guitars, driving drums, catchy vocal hooks, gang vocals on chorus, blink-182 energy, Olivia Rodrigo angst, Warped Tour nostalgia, eyeliner-and-Converse vibes",
+        "tone": "screaming into the void about your bad take, teenage angst channeled into destruction, sour energy, \"good 4 u\" being wrong"
+    },
+    {
+        "id": "new-wave-synth",
+        "name": "New Wave Synth",
+        "emoji": "🖤",
+        "stylePrompt": "New wave post-punk, 118 BPM, angular synth riffs, chorus-drenched guitar, cold drum machine, baritone vocals, Depeche Mode darkness, The Cure melancholy, Joy Division atmosphere, 1982 Manchester vibes",
+        "tone": "dramatically staring into the rain while dismantling your take, black-trenchcoat poetics, beautifully cold destruction"
+    },
+    {
+        "id": "progressive-epic",
+        "name": "Progressive Epic",
+        "emoji": "🌀",
+        "stylePrompt": "Progressive rock, shifting time signatures, 7/8 and 5/4 grooves, Mellotron, extended guitar solos, orchestral interludes, Pink Floyd atmospherics, Rush complexity, Tool intensity, concept-album grandeur",
+        "tone": "twenty-minute odyssey to explain why you are wrong, time-signature-changing condescension, prog-nerd precision, concept-album-level takedown"
+    },
+    {
+        "id": "pure-funk",
+        "name": "Pure Funk",
+        "emoji": "🕺",
+        "stylePrompt": "Funk, 105 BPM, slapping bass, tight chicken-scratch guitar, punchy horns, clavinet, James Brown grunts, Parliament-Funkadelic groove, syncopated drums, get-on-the-good-foot energy",
+        "tone": "funkiest possible destruction, groove-locked devastation, making you dance while getting roasted, slap-bass supremacy"
+    },
+    {
+        "id": "dubstep-assault",
+        "name": "Dubstep Assault",
+        "emoji": "🔊",
+        "stylePrompt": "Dubstep, 140 BPM half-time, massive wobble bass, distorted growls, build-and-drop structure, robotic vocal chops, Skrillex-era filth, earthquake sub-bass, warehouse rave energy",
+        "tone": "bass-dropping nuclear annihilation, wobble-induced destruction, filthy mechanical devastation, your take got dubstepped"
+    },
+    {
+        "id": "deep-house-groove",
+        "name": "Deep House Groove",
+        "emoji": "🌃",
+        "stylePrompt": "Deep house, 122 BPM, warm rolling bass, shuffling hi-hats, soulful vocal chops, lush pads, Disclosure vibes, Kaytranada bounce, sunset-terrace energy, Ibiza chill",
+        "tone": "impossibly cool poolside demolition, head-nodding dismissal, too-groovy-to-care energy, cocktail-in-hand condescension"
+    },
+    {
+        "id": "trip-hop-noir",
+        "name": "Trip-Hop Noir",
+        "emoji": "🌑",
+        "stylePrompt": "Trip-hop, 80 BPM, dark downtempo beats, haunting female vocals, scratchy samples, cinematic strings, Massive Attack tension, Portishead melancholy, smoke-filled atmosphere, Bristol sound",
+        "tone": "shadowy slow-burn destruction, smoke-machine menace, cinema-noir dismantling, dangerously calm devastation"
+    },
+    {
+        "id": "hamilton-rap-musical",
+        "name": "Hamilton Rap Musical",
+        "emoji": "🎭",
+        "stylePrompt": "Hip-hop musical theater, 130 BPM, rapid-fire rap verses over orchestral arrangements, Broadway belting, ensemble harmonies, Lin-Manuel Miranda wordplay, revolutionary energy, history-class-meets-cypher",
+        "tone": "rapping your downfall into the history books, founding-father-level bars, \"I am not throwing away my shot\" at roasting you, cabinet-battle energy"
+    },
+    {
+        "id": "electro-swing",
+        "name": "Electro Swing",
+        "emoji": "🎺",
+        "stylePrompt": "Electro swing, 128 BPM, vintage jazz samples over electronic beats, brass stabs, Charleston rhythm, glitchy swing bass, Caravan Palace energy, Parov Stelar groove, roaring-twenties-meets-EDM",
+        "tone": "dancing the Charleston on your bad take, gatsby-party destruction, vintage swagger with modern teeth, speakeasy smackdown"
+    },
+    {
+        "id": "70s-soft-rock",
+        "name": "70s Soft Rock",
+        "emoji": "🌅",
+        "stylePrompt": "70s soft rock, warm acoustic guitar, lush harmonies, gentle bass, tasteful piano, Fleetwood Mac storytelling, Eagles sunset, Carole King intimacy, Laurel Canyon gold, AM radio warmth",
+        "tone": "sun-drenched California wisdom, canyon-echo disappointment, soft-rock serenity hiding devastating truths, vinyl-crackle condescension"
+    },
+    {
+        "id": "y2k-pop",
+        "name": "Y2K Pop",
+        "emoji": "💿",
+        "stylePrompt": "Y2K pop, 120 BPM, glossy Max Martin production, talk-box effects, bubbly synths, crispy beats, Britney energy, early Beyoncé sass, frosted-tips-era hooks, TRL countdown vibes",
+        "tone": "\"oops I did it again\" — exposed your bad take, butterfly-clip savagery, flip-phone-era pettiness, bedazzled destruction"
+    },
+    {
+        "id": "anthemic-arena-rock",
+        "name": "Anthemic Arena Rock",
+        "emoji": "🏟️",
+        "stylePrompt": "Arena rock anthem, 115 BPM, soaring delay guitars, massive reverb drums, uplifting chord progression, U2 shimmer, Coldplay piano crescendo, stadium-filling energy, lighters-in-the-air climax",
+        "tone": "entire stadium united in judging your take, arena-wide disappointment, fifty-thousand people singing about how wrong you are, skyline-level shade"
+    },
+    {
+        "id": "dark-cabaret",
+        "name": "Dark Cabaret",
+        "emoji": "🎪",
+        "stylePrompt": "Dark cabaret, dramatic piano, accordion, burlesque drums, theatrical female vocals, Dresden Dolls intensity, Weimar Republic decadence, candlelit stage, circus-noir atmosphere",
+        "tone": "ringmaster announcing your humiliation, burlesque-stage theatrics, painted-smile savagery, applause-between-insults energy"
+    },
+    {
+        "id": "shoegaze-dream",
+        "name": "Shoegaze Dream",
+        "emoji": "👟",
+        "stylePrompt": "Shoegaze, swirling wall-of-sound guitars, heavy reverb and delay, ethereal buried vocals, tremolo picking, My Bloody Valentine textures, Slowdive beauty, dream-pop haze, pedal-board worship",
+        "tone": "burying your take under seventeen layers of reverb, beautiful noise drowning out your nonsense, dreamy-eyed obliteration, fuzz-pedal transcendence"
+    },
+    {
+        "id": "salsa-fuego",
+        "name": "Salsa Fuego",
+        "emoji": "💃",
+        "stylePrompt": "Salsa, 180 BPM, blazing horn section, congas and timbales, montuno piano, walking bass, call-and-response vocals, Fania All-Stars fire, Héctor Lavoe passion, dance-floor inferno",
+        "tone": "spinning you around the dance floor of shame, salsa-step destruction, brass-fueled Latin fire, coro chanting your downfall"
+    },
+    {
+        "id": "turkish-psychedelic",
+        "name": "Turkish Psychedelic",
+        "emoji": "🌙",
+        "stylePrompt": "Anatolian rock, electric saz, fuzz guitar, driving Turkish rhythms, Erkin Koray energy, Barış Manço groove, psychedelic reverb, Istanbul garage-rock, 1970s Turkish pop fusion",
+        "tone": "bazaar-psychedelic mind-expansion revealing your foolishness, fuzzed-out Anatolian judgment, Bosphorus-bridge-level drama, Ottoman acid wisdom"
+    },
+    {
+        "id": "west-african-highlife",
+        "name": "West African Highlife",
+        "emoji": "🌍",
+        "stylePrompt": "Highlife, 115 BPM, bright guitar interlocking patterns, horns, palm-wine groove, gentle percussion, E.T. Mensah swing, sunny optimism, Accra dance-hall warmth, golden-era West African pop",
+        "tone": "sunny West African wisdom delivered with a smile, palm-wine-sipping judgment, guitar-lick dismissal, Ghanaian grace roasting"
+    },
+    {
+        "id": "reggae-dub",
+        "name": "Reggae Dub",
+        "emoji": "🔈",
+        "stylePrompt": "Dub reggae, 72 BPM, heavy echo and reverb, deep sub-bass, sparse drums, dub siren, King Tubby mixing-desk magic, Lee Scratch Perry chaos, spacey delay, sound-system culture",
+        "tone": "echo-chamber judgment bouncing into infinity, dub-delay repeating your L forever, sound-system bass vibrating your bad take apart, mixing-desk dismantling"
+    },
+    {
+        "id": "nordic-folk",
+        "name": "Nordic Folk",
+        "emoji": "❄️",
+        "stylePrompt": "Nordic folk, Hardanger fiddle, langspil drone, nyckelharpa, shamanic frame drum, ethereal female vocals, Wardruna atmosphere, fjord ambiance, aurora-borealis mysticism, ancient Norse calm",
+        "tone": "frost-covered ancient wisdom, aurora-borealis-lit judgment, fjord-deep disappointment, Viking ancestor spirits shaking their heads"
+    },
+    {
+        "id": "tropicalia",
+        "name": "Tropicália",
+        "emoji": "🦜",
+        "stylePrompt": "Tropicália, psychedelic Brazilian fusion, bossa nova meets rock guitar, Caetano Veloso poetry, Os Mutantes experimentation, berimbau, tropical percussion, São Paulo counterculture, 1968 energy",
+        "tone": "Brazilian avant-garde judgment, tropical-psychedelic revelation of your errors, counterculture wisdom, samba-rock dismantling with flowers in hair"
+    },
+    {
+        "id": "lofi-bedroom-pop",
+        "name": "Lo-Fi Bedroom Pop",
+        "emoji": "🛏️",
+        "stylePrompt": "Bedroom pop, 95 BPM, dreamy reverbed guitar, soft drum machine, warm synth pads, hushed vocals, Clairo intimacy, boy pablo charm, GarageBand aesthetic, sunlit-room-with-fairy-lights vibes",
+        "tone": "softly devastating you from under a pile of blankets, fairy-light-illuminated shade, whispery lo-fi destruction, cozy annihilation"
+    },
+    {
+        "id": "opera-aria",
+        "name": "Opera Aria",
+        "emoji": "🎭",
+        "stylePrompt": "Grand opera aria, full orchestra, dramatic soprano or tenor solo, sweeping strings, Puccini passion, Verdi grandeur, thundering timpani, standing-ovation intensity, La Scala acoustics",
+        "tone": "operatic diva belting about your failures at full volume, curtain-call condemnation, standing-ovation-worthy destruction, bravissimo roasting"
+    },
+    {
+        "id": "jazz-fusion",
+        "name": "Jazz Fusion",
+        "emoji": "🎹",
+        "stylePrompt": "Jazz fusion, complex chord changes, slap bass, Fender Rhodes, odd-time signatures, Snarky Puppy intricacy, Herbie Hancock exploration, Weather Report cosmic, virtuoso solos, head-nodding complexity",
+        "tone": "intellectually outmaneuvering you in 7/8 time, jazz-hands superiority, too-many-chords condescension, music-theory-degree flex"
+    },
+    {
+        "id": "witch-house",
+        "name": "Witch House",
+        "emoji": "🕸️",
+        "stylePrompt": "Witch house, 80 BPM, pitched-down vocals, occult synths, chopped-and-screwed hip-hop samples, dark ambient textures, Crystal Castles chaos, haunted bass, Salem-trial energy, triangle-symbol aesthetic",
+        "tone": "hexing your bad take from the digital underworld, occult-electronic curse, dark-web judgment, summoning demons to ratio you"
+    },
+    {
+        "id": "chillwave",
+        "name": "Chillwave",
+        "emoji": "🌊",
+        "stylePrompt": "Chillwave, 98 BPM, washed-out synths, hazy vocals, tape-warble effects, warm pads, Washed Out nostalgia, Toro y Moi groove, sun-bleached aesthetic, poolside daydream energy",
+        "tone": "nostalgic sun-hazed destruction, poolside disappointment through vintage filters, dreamy-eyed shade, remembering a time before your bad take existed"
+    },
+    {
+        "id": "crunk-rock",
+        "name": "Crunk Rock",
+        "emoji": "🎉",
+        "stylePrompt": "Crunk rock party, 130 BPM, distorted synths over rock guitars, party chants, LMFAO energy, crowd participation hooks, fist-pumping beat, shot-glass percussion, club-rock fusion, party-anthem maximalism",
+        "tone": "\"shots shots shots\" at your credibility, party-rock destruction, club-anthem annihilation, every day you are shuffling toward your L"
+    },
+    {
+        "id": "outlaw-country",
+        "name": "Outlaw Country",
+        "emoji": "🤠",
+        "stylePrompt": "Outlaw country, 100 BPM, gritty acoustic guitar, pedal steel, upright bass, sparse drums, Johnny Cash baritone, Waylon Jennings grit, Willie Nelson storytelling, dusty-highway honesty, Man in Black energy",
+        "tone": "Man-in-Black judgment, outlaw-code violation notice, walking-the-line energy, \"because you're mine\" — I get to roast you, Nashville rebel wisdom"
+    }
+]

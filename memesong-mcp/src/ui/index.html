@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MemeSong Studio</title>
+<style>
+/* ─── Design System ─── */
+:root {
+    --bg-primary: #0d0d14;
+    --bg-card: #13131f;
+    --bg-card-hover: #1a1a2e;
+    --bg-input: #0a0a12;
+    --border: #2a2a3e;
+    --border-active: #7c5bf5;
+    --text-primary: #e8e6f0;
+    --text-secondary: #8b89a0;
+    --text-muted: #5a5872;
+    --accent: #7c5bf5;
+    --accent-hover: #9478ff;
+    --accent-glow: rgba(124, 91, 245, 0.15);
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --error: #f87171;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --radius: 10px;
+    --radius-sm: 6px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+    font-size: 13px;
+    overflow-x: hidden;
+}
+
+/* ─── Layout ─── */
+.studio {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.studio-header {
+    text-align: center;
+    padding: 16px 0 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+}
+
+.studio-header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #7c5bf5 0%, #c084fc 50%, #f472b6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+}
+
+.studio-header p {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* ─── Sections ─── */
+.section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+/* ─── Mode Toggles ─── */
+.toggle-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-family: var(--font);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.toggle-btn:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--text-muted);
+    color: var(--text-primary);
+}
+
+.toggle-btn.active {
+    background: var(--accent-glow);
+    border-color: var(--accent);
+    color: var(--accent-hover);
+    font-weight: 600;
+}
+
+/* ─── Search ─── */
+.search-bar {
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 9px 12px 9px 34px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-input);
+    color: var(--text-primary);
+    font-size: 13px;
+    font-family: var(--font);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+    border-color: var(--accent);
+}
+
+.search-bar input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 14px;
+    pointer-events: none;
+}
+
+/* ─── Category Pills ─── */
+.category-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.cat-pill {
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 11px;
+    font-family: var(--font);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.cat-pill:hover {
+    border-color: var(--text-muted);
+    color: var(--text-primary);
+}
+
+.cat-pill.active {
+    background: var(--accent-glow);
+    border-color: var(--accent);
+    color: var(--accent-hover);
+    font-weight: 600;
+}
+
+/* ─── Preset Grid ─── */
+.preset-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 6px;
+    max-height: 280px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+.preset-grid::-webkit-scrollbar {
+    width: 4px;
+}
+
+.preset-grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.preset-grid::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 2px;
+}
+
+.preset-card {
+    padding: 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.preset-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--text-muted);
+    transform: translateY(-1px);
+}
+
+.preset-card.selected {
+    background: var(--accent-glow);
+    border-color: var(--accent);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.preset-card .emoji {
+    font-size: 22px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.preset-card .name {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.preset-count {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+/* ─── Song Output ─── */
+.output-section {
+    display: none;
+}
+
+.output-section.visible {
+    display: block;
+}
+
+.output-block {
+    margin-bottom: 12px;
+}
+
+.output-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.output-label span {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+}
+
+.copy-btn {
+    padding: 3px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 10px;
+    font-family: var(--font);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.copy-btn.copied {
+    background: rgba(74, 222, 128, 0.1);
+    border-color: var(--success);
+    color: var(--success);
+}
+
+.output-content {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-input);
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.output-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.output-content::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 2px;
+}
+
+.output-title {
+    font-size: 16px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #7c5bf5, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.output-style {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* ─── Copy All Button ─── */
+.copy-all-btn {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, rgba(124, 91, 245, 0.15), rgba(192, 132, 252, 0.1));
+    color: var(--accent-hover);
+    font-size: 13px;
+    font-weight: 600;
+    font-family: var(--font);
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 8px;
+}
+
+.copy-all-btn:hover {
+    background: linear-gradient(135deg, rgba(124, 91, 245, 0.25), rgba(192, 132, 252, 0.2));
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.copy-all-btn.copied {
+    background: rgba(74, 222, 128, 0.1);
+    border-color: var(--success);
+    color: var(--success);
+}
+
+/* ─── Empty State ─── */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+}
+
+.empty-state .icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    font-size: 12px;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 500px) {
+    .preset-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
+    .toggle-btn { font-size: 11px; padding: 6px 8px; }
+}
+</style>
+</head>
+<body>
+<div class="studio">
+    <!-- Header -->
+    <div class="studio-header">
+        <h1>🎵 MemeSong Studio</h1>
+        <p>150 style presets • 3 modes • Suno-ready output</p>
+    </div>
+
+    <!-- Mode Toggles -->
+    <div class="section">
+        <div class="section-title">Song Mode</div>
+        <div class="toggle-row" id="modeToggles">
+            <button class="toggle-btn" data-mode="serious">🎵 Serious</button>
+            <button class="toggle-btn active" data-mode="satirical">😏 Satirical</button>
+            <button class="toggle-btn" data-mode="hilarious">🤣 Hilarious</button>
+        </div>
+        <div class="section-title">Output Type</div>
+        <div class="toggle-row" id="outputToggles">
+            <button class="toggle-btn active" data-output="vocals">🎤 Vocals</button>
+            <button class="toggle-btn" data-output="instrumental">🎼 Instrumental</button>
+        </div>
+    </div>
+
+    <!-- Style Browser -->
+    <div class="section">
+        <div class="section-title">Style Preset</div>
+        <div class="search-bar">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="presetSearch" placeholder="Search 150 styles...">
+        </div>
+        <div class="category-pills" id="categoryPills"></div>
+        <div class="preset-count" id="presetCount"></div>
+        <div class="preset-grid" id="presetGrid"></div>
+    </div>
+
+    <!-- Song Output (shown when a song is generated) -->
+    <div class="output-section" id="outputSection">
+        <div class="section-title">Generated Song</div>
+        
+        <div class="output-block">
+            <div class="output-label">
+                <span>Title</span>
+                <button class="copy-btn" data-copy="title">Copy</button>
+            </div>
+            <div class="output-content output-title" id="outputTitle"></div>
+        </div>
+        
+        <div class="output-block">
+            <div class="output-label">
+                <span>Suno Style Prompt</span>
+                <button class="copy-btn" data-copy="style">Copy</button>
+            </div>
+            <div class="output-content output-style" id="outputStyle"></div>
+        </div>
+        
+        <div class="output-block">
+            <div class="output-label">
+                <span id="lyricsLabel">Lyrics</span>
+                <button class="copy-btn" data-copy="lyrics">Copy</button>
+            </div>
+            <div class="output-content" id="outputLyrics"></div>
+        </div>
+
+        <button class="copy-all-btn" id="copyAllBtn">📋 Copy All (Suno-Ready)</button>
+    </div>
+
+    <!-- Empty state for output -->
+    <div id="emptyOutput" class="empty-state">
+        <div class="icon">🎵</div>
+        <p>Select a style and ask Claude to generate a song.<br>Output will appear here.</p>
+    </div>
+</div>
+
+<script>
+// ─── Preset Data (injected at runtime) ───
+// This will be populated by the MCP server or fetched
+let PRESETS = [];
+let selectedPreset = null;
+let currentMode = 'satirical';
+let currentOutput = 'vocals';
+let activeCategory = null;
+let songData = { title: '', style: '', lyrics: '' };
+
+// Category definitions
+const CATEGORIES = {
+    'hip-hop': { label: '🎤 Hip-Hop', ids: ['90s-boom-bap','hype-trap','gangster-rap','dirty-south-crunk','mafioso-rap','houston-screw','chicago-drill-og','detroit-street-rap','slim-shady','nf-intensity','bay-area-hyphy','uk-drill','phonk-drift','old-head-lecture','ye-gospel-rap','hamilton-rap-musical'] },
+    'rock': { label: '🎸 Rock', ids: ['dad-rock-lecture','punk-rock-riot','emo-anthem','grunge-flannel','surf-rock','viking-metal','death-metal-takedown','industrial-grind','power-ballad','progressive-epic','pop-punk-revival','anthemic-arena-rock','shoegaze-dream','crunk-rock'] },
+    'pop': { label: '✨ Pop', ids: ['genz-hyperpop','valley-girl-pop','90s-boy-band','euro-pop-anthem','tiktok-bait','npc-streaming','y2k-pop','lofi-bedroom-pop'] },
+    'electronic': { label: '🎛️ Electronic', ids: ['sarcastic-cyberpunk','80s-synthwave','edm-festival-drop','vaporwave-mall','drum-and-bass-rave','christian-edm','dubstep-assault','deep-house-groove','electro-swing','witch-house','chillwave'] },
+    'r-and-b': { label: '💜 R&B', ids: ['petty-rnb','neo-soul-confessional','trap-soul'] },
+    'jazz-blues': { label: '🎷 Jazz/Blues', ids: ['smooth-jazz-roast','bossa-nova','motown-soul','blues-confession','rat-pack-lounge','doo-wop-corner','lofi-study-beats','jazz-fusion'] },
+    'country': { label: '🤠 Country', ids: ['country-roast','bluegrass-banjo-duel','cajun-zydeco','country-trap','hawaiian-slack-key','outlaw-country','70s-soft-rock'] },
+    'latin': { label: '💃 Latin', ids: ['mariachi-tragedy','flamenco-fury','tango-argentino','reggaeton-perreo','cumbia-roast','salsa-fuego','tropicalia'] },
+    'world': { label: '🌍 World', ids: ['irish-pub-lament','russian-tragedy','swiss-yodel-chaos','french-chanson','greek-taverna','german-beer-hall','balkan-brass','bollywood-drama','kpop-scandal','jpop-kawaii','chinese-opera','persian-classical','andean-panpipe','fado-saudade','klezmer-kvetch','afrobeat-sermon','amapiano','dancehall-bashment','middle-eastern-hurdy-gurdy','didgeridoo-outback','throat-singing-doom','turkish-psychedelic','west-african-highlife','reggae-dub','nordic-folk','reggae-chill'] },
+    'classical': { label: '🎻 Classical', ids: ['classical-piano-nocturne','gregorian-chant','church-hymn','broadway-drama','barbershop-quartet','gospel-revival','opera-aria'] },
+    'novelty': { label: '🎪 Novelty', ids: ['clown-college','wwe-entrance','video-game-boss','sports-commentary','infomercial-jingle','weather-channel','nature-documentary','true-crime-podcast','courtroom-drama','noir-detective','elevator-muzak','drill-sergeant','haunted-music-box','spaghetti-western','funeral-march','movie-trailer-epic','soap-opera-theme','kids-show-theme','breaking-news','linkedin-guru','asmr-whisper-roast','spoken-word-poetry','christmas-carol','80s-workout-video','lullaby-roast','toxic-positivity','chefs-kiss','succession-dynasty','weird-al-parody','sea-shanty-ratio','accordion-tragedy','dark-cabaret','anime-villain-monologue'] },
+    'other': { label: '🔮 Other', ids: ['disco-inferno','pure-funk','trip-hop-noir','new-wave-synth'] },
+};
+
+// ─── Initialize ───
+function init() {
+    renderCategoryPills();
+    setupModeToggles();
+    setupOutputToggles();
+    setupSearch();
+    setupCopyButtons();
+
+    // Try to communicate with MCP host
+    try {
+        if (window.parent !== window) {
+            window.addEventListener('message', handleHostMessage);
+            // Request preset data from host
+            window.parent.postMessage({ jsonrpc: '2.0', method: 'ui/ready', params: {} }, '*');
+        }
+    } catch (e) {
+        // Not in an iframe, standalone mode
+    }
+
+    // Load presets inline (fallback / standalone)
+    fetchPresetsInline();
+}
+
+function fetchPresetsInline() {
+    // Presets will be injected by the server or loaded via tool results
+    // For now, try to extract from the page or use an empty set
+    if (PRESETS.length === 0) {
+        // Attempt to load from a global if the host injected it
+        if (window.__MEMESONG_PRESETS__) {
+            PRESETS = window.__MEMESONG_PRESETS__;
+        }
+    }
+    renderPresets();
+}
+
+function handleHostMessage(event) {
+    const data = event.data;
+    if (!data || !data.jsonrpc) return;
+
+    if (data.method === 'ui/toolResult') {
+        // Parse song output from tool result
+        const text = data.params?.content?.[0]?.text || '';
+        parseSongOutput(text);
+    } else if (data.method === 'ui/presets') {
+        PRESETS = data.params?.presets || [];
+        renderPresets();
+    }
+}
+
+// ─── Category Pills ───
+function renderCategoryPills() {
+    const container = document.getElementById('categoryPills');
+    const allPill = document.createElement('button');
+    allPill.className = 'cat-pill active';
+    allPill.textContent = '🎵 All';
+    allPill.onclick = () => {
+        activeCategory = null;
+        document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+        allPill.classList.add('active');
+        renderPresets();
+    };
+    container.appendChild(allPill);
+
+    for (const [key, cat] of Object.entries(CATEGORIES)) {
+        const pill = document.createElement('button');
+        pill.className = 'cat-pill';
+        pill.textContent = cat.label;
+        pill.dataset.category = key;
+        pill.onclick = () => {
+            activeCategory = key;
+            document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+            pill.classList.add('active');
+            renderPresets();
+        };
+        container.appendChild(pill);
+    }
+}
+
+// ─── Preset Grid ───
+function renderPresets() {
+    const grid = document.getElementById('presetGrid');
+    const search = document.getElementById('presetSearch').value.toLowerCase();
+    grid.innerHTML = '';
+
+    let filtered = PRESETS;
+
+    if (activeCategory) {
+        const ids = CATEGORIES[activeCategory]?.ids || [];
+        filtered = filtered.filter(p => ids.includes(p.id));
+    }
+
+    if (search) {
+        filtered = filtered.filter(p =>
+            p.name.toLowerCase().includes(search) ||
+            (p.stylePrompt && p.stylePrompt.toLowerCase().includes(search))
+        );
+    }
+
+    document.getElementById('presetCount').textContent = 
+        `Showing ${filtered.length} of ${PRESETS.length} presets`;
+
+    filtered.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'preset-card' + (selectedPreset?.id === p.id ? ' selected' : '');
+        card.innerHTML = `<span class="emoji">${p.emoji}</span><span class="name">${p.name}</span>`;
+        card.onclick = () => {
+            selectedPreset = p;
+            document.querySelectorAll('.preset-card').forEach(c => c.classList.remove('selected'));
+            card.classList.add('selected');
+            // Notify host of selection
+            notifyHost('presetSelected', { preset: p, mode: currentMode, output: currentOutput });
+        };
+        grid.appendChild(card);
+    });
+
+    if (filtered.length === 0) {
+        grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--text-muted);">No presets match your search</div>';
+    }
+}
+
+// ─── Mode & Output Toggles ───
+function setupModeToggles() {
+    document.querySelectorAll('#modeToggles .toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentMode = btn.dataset.mode;
+            document.querySelectorAll('#modeToggles .toggle-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            notifyHost('modeChanged', { mode: currentMode });
+        });
+    });
+}
+
+function setupOutputToggles() {
+    document.querySelectorAll('#outputToggles .toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentOutput = btn.dataset.output;
+            document.querySelectorAll('#outputToggles .toggle-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('lyricsLabel').textContent = 
+                currentOutput === 'instrumental' ? 'Metatags' : 'Lyrics';
+            notifyHost('outputChanged', { output: currentOutput });
+        });
+    });
+}
+
+// ─── Search ───
+function setupSearch() {
+    const input = document.getElementById('presetSearch');
+    let timeout;
+    input.addEventListener('input', () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(renderPresets, 150);
+    });
+}
+
+// ─── Song Output ───
+function parseSongOutput(text) {
+    const titleMatch = text.match(/---TITLE---\s*([\s\S]*?)(?=---STYLE---|$)/i);
+    const styleMatch = text.match(/---STYLE---\s*([\s\S]*?)(?=---LYRICS---|---TAGS---|$)/i);
+    const lyricsMatch = text.match(/---LYRICS---\s*([\s\S]*?)$/i);
+    const tagsMatch = text.match(/---TAGS---\s*([\s\S]*?)$/i);
+
+    songData = {
+        title: titleMatch?.[1]?.trim() || '',
+        style: styleMatch?.[1]?.trim() || '',
+        lyrics: (lyricsMatch?.[1] || tagsMatch?.[1] || '').trim(),
+    };
+
+    if (songData.title || songData.lyrics) {
+        showOutput();
+    }
+}
+
+function showOutput() {
+    document.getElementById('outputSection').classList.add('visible');
+    document.getElementById('emptyOutput').style.display = 'none';
+    document.getElementById('outputTitle').textContent = songData.title;
+    document.getElementById('outputStyle').textContent = songData.style;
+    document.getElementById('outputLyrics').textContent = songData.lyrics;
+}
+
+/**
+ * Public API: Call this from outside to display song output
+ */
+window.displaySong = function(title, style, lyrics) {
+    songData = { title, style, lyrics };
+    showOutput();
+};
+
+// ─── Copy Buttons ───
+function setupCopyButtons() {
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+            const field = btn.dataset.copy;
+            const text = songData[field] || '';
+            await copyToClipboard(text);
+            flashCopied(btn);
+        });
+    });
+
+    document.getElementById('copyAllBtn').addEventListener('click', async () => {
+        const full = formatSunoOutput();
+        await copyToClipboard(full);
+        const btn = document.getElementById('copyAllBtn');
+        btn.textContent = '✅ Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.textContent = '📋 Copy All (Suno-Ready)';
+            btn.classList.remove('copied');
+        }, 2000);
+    });
+}
+
+function formatSunoOutput() {
+    const parts = [];
+    if (songData.title) parts.push(`Title: ${songData.title}`);
+    if (songData.style) parts.push(`\nStyle: ${songData.style}`);
+    if (songData.lyrics) parts.push(`\n${songData.lyrics}`);
+    return parts.join('\n');
+}
+
+async function copyToClipboard(text) {
+    try {
+        await navigator.clipboard.writeText(text);
+    } catch {
+        // Fallback for sandboxed environments
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+    }
+}
+
+function flashCopied(btn) {
+    const original = btn.textContent;
+    btn.textContent = '✅';
+    btn.classList.add('copied');
+    setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('copied');
+    }, 1500);
+}
+
+// ─── Host Communication ───
+function notifyHost(event, data) {
+    try {
+        if (window.parent !== window) {
+            window.parent.postMessage({
+                jsonrpc: '2.0',
+                method: `memesong/${event}`,
+                params: data,
+            }, '*');
+        }
+    } catch (e) {
+        // Not in iframe context
+    }
+}
+
+// ─── Boot ───
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

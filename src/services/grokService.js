@@ -9,10 +9,61 @@ const GROK_API_URL = 'https://api.x.ai/v1/chat/completions';
  * @param {object} preset - Selected style preset
  * @param {string} additionalContext - Optional additional context to steer lyrics
  * @param {string} model - Grok model to use (default: grok-4-1-fast-non-reasoning)
+ * @param {string} humorMode - 'satirical' or 'hilarious' - changes the tone of the prompt
+ * @param {boolean} instrumentalMode - if true, generate Suno metatags for instrumental instead of lyrics
  * @returns {Promise<{title: string, style: string, lyrics: string}>}
  */
-export async function generateSong(apiKey, extractedText, preset, additionalContext = '', model = 'grok-4-1-fast-non-reasoning') {
-    const systemPrompt = `You are a satirical songwriting genius who creates viral, funny songs about trending topics and social media posts. You specialize in creating songs that playfully roast and mock the subject with clever wordplay and catchy hooks.
+export async function generateSong(apiKey, extractedText, preset, additionalContext = '', model = 'grok-4-1-fast-non-reasoning', humorMode = 'satirical', instrumentalMode = false) {
+    // Choose system prompt based on humor mode
+    const satiricalPrompt = `You are a satirical songwriting genius who creates viral, funny songs about trending topics and social media posts. You specialize in creating songs that playfully roast and mock the subject with clever wordplay and catchy hooks.`;
+
+    const hilariousPrompt = `You are an UNHINGED comedy songwriting wizard who creates OUTRAGEOUSLY HILARIOUS songs that make people cry-laugh. Your songs are ABSURDLY FUNNY, completely over-the-top, and use the most ridiculous wordplay imaginable. Think "Weird Al meets a meme-obsessed comedian on Red Bull." Every line should be a punchline. Go ABSOLUTELY WILD with the humor - no holding back! Maximum chaos, maximum laughs!`;
+
+    const seriousPrompt = `You are a world-class professional songwriter who writes emotionally compelling, genuine songs. You craft lyrics with poetic depth, authentic feeling, and memorable melodies — no satire, no irony, no comedy. Think of the best singer-songwriters: heartfelt storytelling, vivid imagery, universal themes that connect with listeners. Your songs should feel like they belong on a real album — moving, powerful, and beautifully written.`;
+
+    const basePrompt = humorMode === 'hilarious' ? hilariousPrompt : humorMode === 'serious' ? seriousPrompt : satiricalPrompt;
+
+    // Instrumental mode: generate Suno metatags instead of lyrics
+    const instrumentalSystemPrompt = `You are an expert music producer and composer who creates detailed instrumental composition roadmaps for Suno.ai. You specialize in translating themes and moods into rich, structured instrumental arrangements using Suno's metatag system.
+
+${sunoHints}
+
+CRITICAL FORMATTING RULES:
+1. Return your response in EXACTLY this format:
+---TITLE---
+[A catchy, evocative instrumental title - short and punchy]
+---STYLE---
+[The style prompt for Suno - one paragraph describing BPM, instruments, mood, and energy. MUST include "instrumental" and "no vocals"]
+---TAGS---
+[The complete Suno metatag composition roadmap]
+
+2. The TITLE should be evocative and capture the mood (e.g., "Midnight Chase", "Desert Storm Rising", "Neon Requiem")
+3. The STYLE section MUST include "instrumental, no vocals" and describe BPM, key instruments, mood, and energy
+4. The TAGS section should be a structured composition using Suno metatags in [brackets]
+5. Use structural tags like [Intro], [Build], [Drop], [Breakdown], [Guitar Solo], [Piano Solo], [Climax], [Outro]
+6. Between tags, add brief mood/dynamic descriptions to guide the AI (e.g., "tension building", "explosive energy", "melancholy fade")
+7. Include tempo and dynamic changes throughout - make it a JOURNEY, not just a loop
+8. Aim for 2-3 minutes of structured composition
+
+EXAMPLE OUTPUT for TAGS section:
+[Intro]
+Soft piano, atmospheric pads, building tension
+[Build]
+Drums enter, bass rising, synth arpeggios intensifying
+[Drop]
+Full energy, all instruments, driving rhythm
+[Breakdown]
+Stripped back, haunting melody, echo effects
+[Guitar Solo]
+Emotional, soaring, reverb-drenched
+[Climax]
+All instruments return, maximum intensity, layered harmonies
+[Outro]
+Gradual fade, piano returns alone, final chord ring out
+
+Make the composition dynamic, expressive, and cinematic.`;
+
+    const vocalSystemPrompt = `${basePrompt}
 
 ${sunoHints}
 
@@ -53,14 +104,70 @@ DATE/NUMBER RULE:
 - If there are any dates in the content, SPELL THEM OUT fully in lyrics so they sound natural when sung
 - Example: "Dec 10, 2025" → "December tenth, twenty twenty-five"
 - Example: "1/15/24" → "January fifteenth, twenty twenty-four"
-- This ensures proper pronunciation when the song is generated`;
+- This ensures proper pronunciation when the song is generated
+
+PRONUNCIATION RULE (CRITICAL FOR SUNO):
+- Replace terms that Suno often mispronounces with phonetic spellings in the lyrics
+- Common replacements:
+  • "xAI" → "X-A-I" or "X A I"
+  • "SpaceX" → "Space-X"
+  • "X" (the platform) → "the platform X" or "X dot com"
+  • "AI" (standalone) → "A-I" (spell it out)
+  • "CEO" → "C-E-O"
+  • "API" → "A-P-I"
+  • "UI/UX" → "U-I" / "U-X"
+  • "ML" → "M-L"
+  • Any other acronyms: spell them out with hyphens or spaces
+- For other tech/brand names that might be tricky, use common sense phonetic spelling
+- Don't overdo it - only apply this to terms that would genuinely be unclear when sung`;
+
+    const systemPrompt = instrumentalMode ? instrumentalSystemPrompt : vocalSystemPrompt;
 
     // Build context section if additional context provided
     const contextSection = additionalContext
         ? `\n\n--- ADDITIONAL CONTEXT/DIRECTION ---\n${additionalContext}\n--- END CONTEXT ---\n\nUse this additional context to guide the tone, focus, or direction of the lyrics.`
         : '';
 
-    const userPrompt = `Here is text extracted from a social media post/screenshot. Create a satirical song about it:
+    const instrumentalUserPrompt = `Here is text/content that should inspire the MOOD and THEME of an instrumental composition:
+
+--- CONTENT ---
+${extractedText}
+--- END CONTENT ---${contextSection}
+
+STYLE DIRECTION: ${preset.name}
+Base style: ${preset.stylePrompt}
+Mood/Energy: ${preset.tone}
+
+Create an INSTRUMENTAL composition roadmap that:
+1. Captures the emotional essence and energy of the content
+2. Translates the mood into musical dynamics (tension, release, climax)
+3. Uses instruments and sounds that match the "${preset.name}" style perfectly
+4. Has a compelling musical arc - not just a flat loop
+5. Is formatted with Suno metatags for an instrumental track (NO VOCALS, NO LYRICS)
+
+GO! Make it a cinematic masterpiece.`;
+
+    const seriousVocalUserPrompt = `Here is text/content that should inspire a genuine, heartfelt song:
+
+--- CONTENT ---
+${extractedText}
+--- END CONTENT ---${contextSection}
+
+STYLE DIRECTION: ${preset.name}
+Base style: ${preset.stylePrompt}
+Mood: ${preset.tone}
+
+Create a genuine song that:
+1. Captures the real emotional core and meaning of the content
+2. Has a memorable, singable chorus with universal appeal
+3. Uses vivid imagery, metaphor, and authentic storytelling
+4. Matches the "${preset.name}" musical style perfectly
+5. Is formatted for Suno.ai with proper structure hints
+6. Feels like a real song — no satire, no irony, no jokes
+
+GO! Make it a song that moves people.`;
+
+    const funnyVocalUserPrompt = `Here is text extracted from a social media post/screenshot. Create a satirical song about it:
 
 --- POST CONTENT ---
 ${extractedText}
@@ -78,6 +185,10 @@ Create a song that:
 5. Is formatted for Suno.ai with proper structure hints
 
 GO! Make it funny and viral-worthy.`;
+
+    const vocalUserPrompt = humorMode === 'serious' ? seriousVocalUserPrompt : funnyVocalUserPrompt;
+
+    const userPrompt = instrumentalMode ? instrumentalUserPrompt : vocalUserPrompt;
 
     const response = await fetch(GROK_API_URL, {
         method: 'POST',
@@ -111,7 +222,7 @@ GO! Make it funny and viral-worthy.`;
     const content = data.choices[0]?.message?.content || '';
 
     // Parse the response
-    return parseGrokResponse(content);
+    return instrumentalMode ? parseInstrumentalResponse(content) : parseGrokResponse(content);
 }
 
 /**
@@ -125,6 +236,21 @@ function parseGrokResponse(content) {
     const title = titleMatch?.[1]?.trim() || 'Untitled Banger';
     const style = styleMatch?.[1]?.trim() || 'Unable to parse style';
     const lyrics = lyricsMatch?.[1]?.trim() || content;
+
+    return { title, style, lyrics };
+}
+
+/**
+ * Parse Grok's instrumental response into title, style and tags
+ */
+function parseInstrumentalResponse(content) {
+    const titleMatch = content.match(/---TITLE---\s*([\s\S]*?)(?=---STYLE---|$)/i);
+    const styleMatch = content.match(/---STYLE---\s*([\s\S]*?)(?=---TAGS---|$)/i);
+    const tagsMatch = content.match(/---TAGS---\s*([\s\S]*?)$/i);
+
+    const title = titleMatch?.[1]?.trim() || 'Untitled Instrumental';
+    const style = styleMatch?.[1]?.trim() || 'Unable to parse style';
+    const lyrics = tagsMatch?.[1]?.trim() || content; // reuse 'lyrics' key for compatibility
 
     return { title, style, lyrics };
 }

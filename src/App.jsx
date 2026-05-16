@@ -121,7 +121,7 @@ function App() {
         <div className="app">
             <header className="app-header">
                 <h1>🎵 Grok MemeSong</h1>
-                <p>Turn X posts into satirical bangers with Grok AI → Suno.ai</p>
+                <p>Turn posts into bangers with Grok AI → Suno.ai</p>
             </header>
 
             <div className="api-key-section">

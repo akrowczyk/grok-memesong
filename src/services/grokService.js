@@ -214,8 +214,16 @@ GO! Make it funny and viral-worthy.`;
     });
 
     if (!response.ok) {
-        const error = await response.json().catch(() => ({}));
-        throw new Error(error.error?.message || `API request failed: ${response.status}`);
+        const errorBody = await response.text().catch(() => '');
+        let errorMessage = `API request failed: ${response.status}`;
+        try {
+            const parsed = JSON.parse(errorBody);
+            errorMessage = parsed.error?.message || parsed.message || JSON.stringify(parsed, null, 2);
+        } catch {
+            if (errorBody) errorMessage += ` — ${errorBody.slice(0, 300)}`;
+        }
+        console.error('Grok API error:', response.status, errorBody);
+        throw new Error(errorMessage);
     }
 
     const data = await response.json();

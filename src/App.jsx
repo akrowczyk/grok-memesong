@@ -1,19 +1,32 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ScreenshotUpload from './components/ScreenshotUpload';
 import StylePresets from './components/StylePresets';
 import SongOutput from './components/SongOutput';
+import {
+    MusicIcon,
+    KeyIcon,
+    ZapIcon,
+    BrainIcon,
+    MicIcon,
+    SlidersIcon,
+    ImageIcon,
+    FileTextIcon,
+    SparklesIcon,
+    AlertIcon,
+    XIcon,
+} from './components/Icons';
 import { generateSong } from './services/grokService';
 import { extractTextFromImage, cleanExtractedText } from './services/ocrService';
 import { presets } from './data/presets';
 
 const LOADING_MESSAGES = [
-    '🔍 Reading the screenshot...',
-    '🎵 Analyzing the post...',
-    '🎤 Writing fire bars...',
-    '🎹 Composing the hook...',
-    '🔥 Adding maximum pettiness...',
-    '✨ Making it viral-worthy...',
-    '🎭 Perfecting the sass...',
+    'Reading the screenshot...',
+    'Analyzing the post...',
+    'Writing fire bars...',
+    'Composing the hook...',
+    'Dialing in the tone...',
+    'Structuring Suno metatags...',
+    'Polishing the track...',
 ];
 
 function App() {
@@ -22,7 +35,7 @@ function App() {
         return import.meta.env.VITE_XAI_API_KEY || localStorage.getItem('xai-api-key') || '';
     });
     const [grokModel, setGrokModel] = useState('grok-4-1-fast-non-reasoning');
-    const [humorMode, setHumorMode] = useState('satirical'); // 'satirical' or 'hilarious'
+    const [humorMode, setHumorMode] = useState('satirical'); // 'serious', 'satirical', or 'hilarious'
     const [instrumentalMode, setInstrumentalMode] = useState(false);
     const [image, setImage] = useState(null);
     const [contextText, setContextText] = useState('');
@@ -33,6 +46,41 @@ function App() {
     const [ocrProgress, setOcrProgress] = useState(0);
     const [extractedText, setExtractedText] = useState('');
     const [error, setError] = useState('');
+
+    const apiDialogRef = useRef(null);
+
+    // Fallback light-dismiss for browsers without <dialog closedby="any"> (e.g. Safari)
+    useEffect(() => {
+        const dialog = apiDialogRef.current;
+        if (!dialog || 'closedBy' in HTMLDialogElement.prototype) return;
+
+        const isOutside = (e) => {
+            const r = dialog.getBoundingClientRect();
+            return e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom;
+        };
+
+        let pressedOutside = false;
+        const onPointerDown = (e) => {
+            pressedOutside = isOutside(e);
+        };
+        const onPointerUp = (e) => {
+            if (pressedOutside && isOutside(e)) {
+                dialog.close();
+            }
+            pressedOutside = false;
+        };
+
+        dialog.addEventListener('pointerdown', onPointerDown);
+        dialog.addEventListener('pointerup', onPointerUp);
+        return () => {
+            dialog.removeEventListener('pointerdown', onPointerDown);
+            dialog.removeEventListener('pointerup', onPointerUp);
+        };
+    }, []);
+
+    const openApiDialog = () => {
+        apiDialogRef.current?.showModal();
+    };
 
     // Save API key to localStorage
     const handleApiKeyChange = (e) => {
@@ -58,11 +106,12 @@ function App() {
 
     const handleGenerate = async () => {
         if (!apiKey) {
-            setError('Please enter your xAI API key');
+            setError('Please add your xAI API key to generate a song.');
+            openApiDialog();
             return;
         }
         if (!image && !contextText.trim()) {
-            setError('Please upload a screenshot or enter some text');
+            setError('Please upload/paste a screenshot or enter some text.');
             return;
         }
 
@@ -76,9 +125,8 @@ function App() {
             let contentForSong = '';
             let additionalContext = contextText.trim();
 
-            // If we have an image, extract text from it
             if (image) {
-                setLoadingMessage('🔍 Reading text from screenshot...');
+                setLoadingMessage('Reading text from screenshot...');
                 const ocrResult = await extractTextFromImage(image.preview, (progress) => {
                     setOcrProgress(progress);
                 });
@@ -87,7 +135,6 @@ function App() {
                 setExtractedText(cleanedText);
 
                 if (!cleanedText || cleanedText.length < 10) {
-                    // If OCR failed but we have context text, use that instead
                     if (!additionalContext) {
                         throw new Error('Could not extract enough text from the image. Try a clearer screenshot or add text below.');
                     }
@@ -96,14 +143,12 @@ function App() {
                 }
             }
 
-            // If no image content, use context text as main content
             if (!contentForSong && additionalContext) {
                 contentForSong = additionalContext;
-                additionalContext = ''; // Don't duplicate it
+                additionalContext = '';
             }
 
-            // Generate song using Grok text model
-            setLoadingMessage(instrumentalMode ? '🎼 Composing your score...' : '🎵 Writing your banger...');
+            setLoadingMessage(instrumentalMode ? 'Composing your instrumental score...' : 'Writing your track...');
             const result = await generateSong(apiKey, contentForSong, selectedPreset, additionalContext, grokModel, humorMode, instrumentalMode);
             setSongOutput(result);
         } catch (err) {
@@ -115,151 +160,263 @@ function App() {
         }
     };
 
-    const canGenerate = apiKey && (image || contextText.trim()) && selectedPreset && !isLoading;
+    const hasApiKey = Boolean(apiKey.trim());
+    const canGenerate = hasApiKey && (image || contextText.trim()) && selectedPreset && !isLoading;
 
     return (
         <div className="app">
             <header className="app-header">
-                <h1>🎵 Grok MemeSong</h1>
-                <p>Turn posts into bangers with Grok AI → Suno.ai</p>
+                <div className="brand-block">
+                    <div className="brand-mark" aria-hidden="true">
+                        <MusicIcon size={18} />
+                    </div>
+                    <div>
+                        <div className="brand-title-row">
+                            <h1>Grok MemeSong</h1>
+                            <span className="brand-badge">xAI → Suno</span>
+                        </div>
+                        <p className="brand-subtitle">Turn posts &amp; screenshots into Suno-ready tracks</p>
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+                    className={`api-status-btn ${hasApiKey ? 'connected' : 'missing'}`}
+                    onClick={openApiDialog}
+                >
+                    <span className="status-dot" aria-hidden="true" />
+                    <KeyIcon size={14} />
+                    <span>{hasApiKey ? 'API Key Ready' : 'Set API Key'}</span>
+                </button>
             </header>
 
-            <div className="api-key-section">
-                <input
-                    type="password"
-                    className="api-key-input"
-                    placeholder="Enter your xAI API key..."
-                    value={apiKey}
-                    onChange={handleApiKeyChange}
-                />
-            </div>
-
-            <div className="model-toggle-section">
-                <div className="toggle-label">Grok Model:</div>
-                <div className="toggle-switch-container">
-                    <button
-                        className={`toggle-option ${grokModel === 'grok-4-1-fast-non-reasoning' ? 'active' : ''}`}
-                        onClick={() => setGrokModel('grok-4-1-fast-non-reasoning')}
-                        title="Fast generation, great for memes"
-                    >
-                        ⚡ Fast
-                    </button>
-                    <button
-                        className={`toggle-option ${grokModel === 'grok-4-1-fast-reasoning' ? 'active' : ''}`}
-                        onClick={() => setGrokModel('grok-4-1-fast-reasoning')}
-                        title="Uses chain of thought for smarter lyrics"
-                    >
-                        🧠 Reasoning
-                    </button>
+            <dialog
+                ref={apiDialogRef}
+                className="api-dialog"
+                closedby="any"
+                aria-labelledby="api-key-dialog-title"
+            >
+                <div className="api-dialog-header">
+                    <div className="api-dialog-title-wrap">
+                        <KeyIcon size={16} className="api-dialog-icon" />
+                        <h2 id="api-key-dialog-title">xAI API Key</h2>
+                    </div>
+                    <form method="dialog">
+                        <button type="submit" className="dialog-close-btn" aria-label="Close dialog">
+                            <XIcon size={16} />
+                        </button>
+                    </form>
                 </div>
-            </div>
 
-            <div className="model-toggle-section">
-                <div className="toggle-label">Song Mode:</div>
-                <div className="toggle-switch-container">
-                    <button
-                        className={`toggle-option ${humorMode === 'serious' ? 'active' : ''}`}
-                        onClick={() => setHumorMode('serious')}
-                        title="Genuine, heartfelt songwriting — no humor or satire"
-                    >
-                        🎵 Serious
-                    </button>
-                    <button
-                        className={`toggle-option ${humorMode === 'satirical' ? 'active' : ''}`}
-                        onClick={() => setHumorMode('satirical')}
-                        title="Sarcastic, clever, and witty (current style)"
-                    >
-                        😏 Satirical
-                    </button>
-                    <button
-                        className={`toggle-option ${humorMode === 'hilarious' ? 'active' : ''}`}
-                        onClick={() => setHumorMode('hilarious')}
-                        title="Over-the-top, absurd, and super funny"
-                    >
-                        🤣 Super Hilarious
-                    </button>
+                <p className="api-dialog-desc">
+                    Stored locally in your browser (or loaded from <code>VITE_XAI_API_KEY</code>) and sent directly to xAI when generating tracks.
+                </p>
+
+                <form method="dialog" className="api-dialog-form">
+                    <input
+                        type="password"
+                        className="api-key-input"
+                        placeholder="xai-..."
+                        value={apiKey}
+                        onChange={handleApiKeyChange}
+                        autoFocus
+                        aria-label="xAI API key"
+                    />
+                    <div className="api-dialog-actions">
+                        <button type="submit" className="btn btn-primary">
+                            Done
+                        </button>
+                    </div>
+                </form>
+            </dialog>
+
+            <section className="control-bar" aria-label="Generation settings">
+                <div className="control-group">
+                    <span className="control-label">Model</span>
+                    <div className="segmented-control">
+                        <button
+                            type="button"
+                            className={`segment-btn ${grokModel === 'grok-4-1-fast-non-reasoning' ? 'active' : ''}`}
+                            onClick={() => setGrokModel('grok-4-1-fast-non-reasoning')}
+                            title="Fast generation, great for memes"
+                        >
+                            <ZapIcon size={13} />
+                            <span>Fast</span>
+                        </button>
+                        <button
+                            type="button"
+                            className={`segment-btn ${grokModel === 'grok-4-1-fast-reasoning' ? 'active' : ''}`}
+                            onClick={() => setGrokModel('grok-4-1-fast-reasoning')}
+                            title="Uses chain of thought for smarter lyrics"
+                        >
+                            <BrainIcon size={13} />
+                            <span>Reasoning</span>
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <div className="model-toggle-section">
-                <div className="toggle-label">Output Mode:</div>
-                <div className="toggle-switch-container">
-                    <button
-                        className={`toggle-option ${!instrumentalMode ? 'active' : ''}`}
-                        onClick={() => setInstrumentalMode(false)}
-                        title="Generate lyrics for a vocal track"
-                    >
-                        🎤 Vocals
-                    </button>
-                    <button
-                        className={`toggle-option ${instrumentalMode ? 'active' : ''}`}
-                        onClick={() => setInstrumentalMode(true)}
-                        title="Generate Suno metatags for an instrumental score"
-                    >
-                        🎼 Instrumental
-                    </button>
+                <div className="control-divider" aria-hidden="true" />
+
+                <div className="control-group">
+                    <span className="control-label">Tone</span>
+                    <div className="segmented-control">
+                        <button
+                            type="button"
+                            className={`segment-btn ${humorMode === 'serious' ? 'active' : ''}`}
+                            onClick={() => setHumorMode('serious')}
+                            title="Genuine, heartfelt songwriting — no humor or satire"
+                        >
+                            <span>Serious</span>
+                        </button>
+                        <button
+                            type="button"
+                            className={`segment-btn ${humorMode === 'satirical' ? 'active' : ''}`}
+                            onClick={() => setHumorMode('satirical')}
+                            title="Sarcastic, clever, and witty"
+                        >
+                            <span>Satirical</span>
+                        </button>
+                        <button
+                            type="button"
+                            className={`segment-btn ${humorMode === 'hilarious' ? 'active' : ''}`}
+                            onClick={() => setHumorMode('hilarious')}
+                            title="Over-the-top, absurd, and super funny"
+                        >
+                            <span>Hilarious</span>
+                        </button>
+                    </div>
                 </div>
-            </div>
 
-            <div className="app-content">
+                <div className="control-divider" aria-hidden="true" />
+
+                <div className="control-group">
+                    <span className="control-label">Output</span>
+                    <div className="segmented-control">
+                        <button
+                            type="button"
+                            className={`segment-btn ${!instrumentalMode ? 'active' : ''}`}
+                            onClick={() => setInstrumentalMode(false)}
+                            title="Generate lyrics for a vocal track"
+                        >
+                            <MicIcon size={13} />
+                            <span>Vocals</span>
+                        </button>
+                        <button
+                            type="button"
+                            className={`segment-btn ${instrumentalMode ? 'active' : ''}`}
+                            onClick={() => setInstrumentalMode(true)}
+                            title="Generate Suno metatags for an instrumental score"
+                        >
+                            <SlidersIcon size={13} />
+                            <span>Instrumental</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <main className="app-content">
                 <div className="left-panel">
                     <div className="card">
-                        <div className="card-title">📸 Screenshot</div>
+                        <div className="card-header">
+                            <div className="card-title">
+                                <ImageIcon size={14} />
+                                <span>Source Content</span>
+                            </div>
+                            <span className="card-step">Step 1</span>
+                        </div>
+
                         <ScreenshotUpload onImageSelect={setImage} currentImage={image} />
+
+                        <div className="context-field">
+                            <label className="field-label" htmlFor="context-input">
+                                <FileTextIcon size={13} />
+                                <span>{image ? 'Extra Direction (Optional)' : 'Or Paste / Type Text'}</span>
+                            </label>
+                            <textarea
+                                id="context-input"
+                                className="context-textarea"
+                                placeholder={
+                                    image
+                                        ? 'Add extra context to steer the angle, jokes, or perspective...'
+                                        : 'Paste a post, tweet, rant, or idea here instead of uploading a screenshot...'
+                                }
+                                value={contextText}
+                                onChange={(e) => setContextText(e.target.value)}
+                                rows={3}
+                            />
+                        </div>
                     </div>
 
-                    <div className="card" style={{ marginTop: '1.5rem' }}>
-                        <div className="card-title">✍️ Context / Alternative Text</div>
-                        <textarea
-                            className="context-textarea"
-                            placeholder={image ? "Add extra context to steer the lyrics (optional)..." : "Or paste/type the post content here instead of uploading..."}
-                            value={contextText}
-                            onChange={(e) => setContextText(e.target.value)}
-                            rows={4}
-                        />
-                        <p className="context-hint">
-                            {image
-                                ? "💡 This text will augment the screenshot to add context or steer the song direction"
-                                : "💡 Use this as an alternative to uploading a screenshot"
-                            }
-                        </p>
-                    </div>
-
-                    <div className="card" style={{ marginTop: '1.5rem' }}>
-                        <div className="card-title">🎨 Style Preset</div>
+                    <div className="card">
+                        <div className="card-header">
+                            <div className="card-title">
+                                <MusicIcon size={14} />
+                                <span>Style Preset</span>
+                            </div>
+                            <span className="card-step">{presets.length} styles</span>
+                        </div>
                         <StylePresets selectedPreset={selectedPreset} onSelect={setSelectedPreset} />
                     </div>
 
-                    <div className="generate-section" style={{ marginTop: '1.5rem' }}>
+                    <div className="generate-section">
                         {error && (
-                            <p style={{ color: 'var(--accent-tertiary)', fontSize: '0.875rem' }}>⚠️ {error}</p>
+                            <div className="error-banner" role="alert">
+                                <AlertIcon size={15} />
+                                <span>{error}</span>
+                            </div>
                         )}
+
                         <button
-                            className="btn btn-primary generate-btn"
+                            type="button"
+                            className={`btn btn-primary generate-btn ${canGenerate ? 'ready' : ''}`}
                             onClick={handleGenerate}
                             disabled={!canGenerate}
                         >
-                            {isLoading ? '⏳ Generating...' : instrumentalMode ? '🎼 Generate Instrumental' : '🎵 Generate Song'}
+                            <SparklesIcon size={16} />
+                            <span>
+                                {isLoading
+                                    ? 'Generating...'
+                                    : instrumentalMode
+                                        ? 'Generate Instrumental'
+                                        : 'Generate Song'}
+                            </span>
                         </button>
+
                         {isLoading && ocrProgress > 0 && ocrProgress < 100 && (
                             <div className="ocr-progress">
-                                <div className="ocr-progress-bar" style={{ width: `${ocrProgress}%` }}></div>
+                                <div className="ocr-progress-bar" style={{ width: `${ocrProgress}%` }} />
                                 <span className="ocr-progress-text">Reading text: {ocrProgress}%</span>
                             </div>
                         )}
                     </div>
 
                     {extractedText && (
-                        <div className="card" style={{ marginTop: '1.5rem' }}>
-                            <div className="card-title">📝 Extracted Text</div>
+                        <div className="card">
+                            <div className="card-header">
+                                <div className="card-title">
+                                    <FileTextIcon size={14} />
+                                    <span>Extracted OCR Text</span>
+                                </div>
+                            </div>
                             <div className="extracted-text">{extractedText}</div>
                         </div>
                     )}
                 </div>
 
                 <div className="right-panel">
-                    <div className="card" style={{ height: '100%' }}>
-                        <div className="card-title">🎤 Output</div>
+                    <div className="card output-card">
+                        <div className="card-header">
+                            <div className="card-title">
+                                <SparklesIcon size={14} />
+                                <span>Studio Output</span>
+                            </div>
+                            {selectedPreset && (
+                                <span className="output-preset-pill">
+                                    <span>{selectedPreset.emoji}</span>
+                                    <span>{selectedPreset.name}</span>
+                                </span>
+                            )}
+                        </div>
                         <SongOutput
                             title={songOutput.title}
                             style={songOutput.style}
@@ -270,7 +427,7 @@ function App() {
                         />
                     </div>
                 </div>
-            </div>
+            </main>
         </div>
     );
 }

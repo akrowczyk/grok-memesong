@@ -5,6 +5,11 @@ import { SearchIcon, ShuffleIcon, XIcon } from './Icons';
 const CATEGORIES = [
     { id: 'all', label: 'All' },
     {
+        id: 'viral',
+        label: 'Viral / TikTok',
+        pattern: /\b(tiktok|jersey[- ]club|brazilian[- ]phonk|uk[- ]garage|nightcore|storytime|pluggnb|slap[- ]house|indie[- ]funk|phonk|hyperpop|npc|earworm|viral)\b/i,
+    },
+    {
         id: 'hip-hop',
         label: 'Hip-Hop',
         pattern: /\b(rap|trap|drill|boom[- ]bap|crunk|hyphy|phonk|shady|nf-|old[- ]head|screw|kendall|mafioso|ye-gospel|hamilton)\b/i,
